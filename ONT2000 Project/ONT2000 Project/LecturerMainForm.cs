@@ -75,7 +75,7 @@ namespace ONT2000_Project
             currentTabIcon.IconChar = FontAwesome.Sharp.IconChar.Book;
             lblCurrentTab.Text = "Your Modules";
 
-            ListModulesForm list = new ListModulesForm();
+            ListModulesForm list = new ListModulesForm(getUserID, userType);
             list.TopLevel = false;
             list.Dock = DockStyle.Fill;
             childFormPanel.Controls.Add(list);
@@ -95,7 +95,7 @@ namespace ONT2000_Project
             currentTabIcon.IconChar = FontAwesome.Sharp.IconChar.Pen;
             lblCurrentTab.Text = "Create Assessments";
 
-            CreateAssessmentsForm assess = new CreateAssessmentsForm();
+            CreateAssessmentsForm assess = new CreateAssessmentsForm(getUserID);
             assess.TopLevel = false;
             assess.Dock = DockStyle.Fill;
             childFormPanel.Controls.Add(assess);
@@ -135,7 +135,7 @@ namespace ONT2000_Project
             currentTabIcon.IconChar = FontAwesome.Sharp.IconChar.Search;
             lblCurrentTab.Text = "Search Assessments";
 
-            SearchAssessmentForm search = new SearchAssessmentForm();
+            SearchAssessmentForm search = new SearchAssessmentForm(getUserID);
             search.TopLevel = false;
             search.Dock = DockStyle.Fill;
             childFormPanel.Controls.Add(search);
@@ -183,6 +183,5 @@ namespace ONT2000_Project
             btnSearchAssessment.ForeColor = Color.White;
         }
 
-      
     }
 }
