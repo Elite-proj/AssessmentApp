@@ -12,9 +12,13 @@ namespace ONT2000_Project
 {
     public partial class LecturerMainForm : Form
     {
-        public LecturerMainForm()
+        int getUserID;
+        string userType;
+        public LecturerMainForm(int value, string type)
         {
             InitializeComponent();
+            getUserID = value;
+            userType = type;
         }
 
         private void LecturerMainForm_Load(object sender, EventArgs e)

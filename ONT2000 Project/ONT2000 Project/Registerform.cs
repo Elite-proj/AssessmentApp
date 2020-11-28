@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+
 
 namespace ONT2000_Project
 {
@@ -31,7 +33,30 @@ namespace ONT2000_Project
 
         private void btnRegisterUser_Click(object sender, EventArgs e)
         {
+            BusinessLogicLayer bll = new BusinessLogicLayer();
+            User user = new User();
 
+            user.name = txtName.Text;
+            user.surname = txtSurname.Text;
+            user.Role = cmbRole.SelectedItem.ToString();
+            user.title = cmbTitle.SelectedItem.ToString();
+            user.email = txtEmailAddress.Text;
+            user.password = txtPassword.Text;
+            user.userStatus = "Active";
+
+            int x = bll.InsertUser(user);
+
+            if (x > 0)
+            {
+                this.Hide();
+                SignIn sign = new SignIn();
+                sign.Show();
+                MessageBox.Show(x + " user added!");
+            }
+            else
+            {
+                MessageBox.Show("Failed to add user");
+            }
         }
 
         // Below is the User interface code only DO NOT TOUCH !!!

@@ -1,21 +1,50 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ELITE\\Downloads\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj": {}
+    "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ELITE\\Downloads\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj": {
+    "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\BLL\\BLL.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\BLL\\BLL.csproj",
+        "projectName": "BLL",
+        "projectPath": "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\BLL\\BLL.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\D_A_L\\D_A_L.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\D_A_L\\D_A_L.csproj",
+        "projectName": "D_A_L",
+        "projectPath": "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\D_A_L\\D_A_L.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\BLL\\BLL.csproj": {
+                "projectPath": "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\BLL\\BLL.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ELITE\\Downloads\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj",
+        "projectUniqueName": "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj",
         "projectName": "ONT2000 Project",
-        "projectPath": "C:\\Users\\ELITE\\Downloads\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj",
-        "packagesPath": "C:\\Users\\ELITE\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ELITE\\Downloads\\ONT2000 Project\\ONT2000 Project\\obj\\",
+        "projectPath": "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj",
+        "packagesPath": "C:\\Users\\Chumokuhle\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
-          "C:\\Users\\ELITE\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Chumokuhle\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -27,7 +56,14 @@
         },
         "frameworks": {
           "net472": {
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\BLL\\BLL.csproj": {
+                "projectPath": "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\BLL\\BLL.csproj"
+              },
+              "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\D_A_L\\D_A_L.csproj": {
+                "projectPath": "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\D_A_L\\D_A_L.csproj"
+              }
+            }
           }
         }
       },

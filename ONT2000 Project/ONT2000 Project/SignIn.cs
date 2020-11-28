@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAL;
+using BLL;
 
 namespace ONT2000_Project
 {
@@ -22,7 +22,7 @@ namespace ONT2000_Project
 
         private void SignIn_Load(object sender, EventArgs e)
         {
-            DataAccessLayer dal = new DataAccessLayer();
+            //DataAccessLayer dal = new DataAccessLayer();
         }
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -33,9 +33,41 @@ namespace ONT2000_Project
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AdminMainForm admin = new AdminMainForm();
-            admin.Show();
+            BusinessLogicLayer bll = new BusinessLogicLayer();
+            DataTable dt = new DataTable();
+
+            dt = bll.SignIn(txtEmail.Text, txtPassword.Text);
+
+            if (dt.Rows.Count > 0)
+            {
+                string userType = dt.Rows[0]["Role"].ToString();
+                int Id = int.Parse(dt.Rows[0]["UserID"].ToString());
+
+                if (userType == "Administrator")
+                {
+                    this.Hide();
+                    AdminMainForm admin = new AdminMainForm();
+                    admin.Show();
+                }
+                else if (userType == "Lecturer")
+                {
+
+                    this.Hide();
+                    LecturerMainForm lect = new LecturerMainForm(Id, userType);
+                    lect.Show();
+                }
+                else if (userType == "Student")
+                {
+                    this.Hide();
+                    StudentsMainForm stud = new StudentsMainForm(Id, userType);
+                    stud.Show();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("User not found!");
+            }
         }
 
 

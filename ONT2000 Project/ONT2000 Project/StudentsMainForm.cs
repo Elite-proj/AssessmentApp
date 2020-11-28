@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
 
 namespace ONT2000_Project
 {
     public partial class StudentsMainForm : Form
     {
-        public StudentsMainForm()
+        int getUserID;
+        string userType;
+        public StudentsMainForm(int value, string type)
         {
             InitializeComponent();
+            getUserID = value;
+            userType = type;
         }
 
         private void StudentsMainForm_Load(object sender, EventArgs e)
