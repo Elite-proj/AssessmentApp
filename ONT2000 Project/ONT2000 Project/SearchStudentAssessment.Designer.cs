@@ -54,7 +54,7 @@
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.Location = new System.Drawing.Point(12, 58);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(238, 32);
+            this.txtSearch.Size = new System.Drawing.Size(238, 24);
             this.txtSearch.TabIndex = 4;
             // 
             // label1
@@ -64,7 +64,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(529, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(94, 32);
+            this.label1.Size = new System.Drawing.Size(61, 24);
             this.label1.TabIndex = 6;
             this.label1.Text = "Filter: ";
             // 
@@ -75,7 +75,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(629, 61);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(253, 34);
+            this.comboBox1.Size = new System.Drawing.Size(253, 26);
             this.comboBox1.TabIndex = 7;
             // 
             // lblDisplayStatus
@@ -85,7 +85,7 @@
             this.lblDisplayStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisplayStatus.Location = new System.Drawing.Point(567, 333);
             this.lblDisplayStatus.Name = "lblDisplayStatus";
-            this.lblDisplayStatus.Size = new System.Drawing.Size(117, 25);
+            this.lblDisplayStatus.Size = new System.Drawing.Size(85, 17);
             this.lblDisplayStatus.TabIndex = 25;
             this.lblDisplayStatus.Text = "display here";
             // 
@@ -96,7 +96,7 @@
             this.lblDisplayDueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisplayDueDate.Location = new System.Drawing.Point(591, 285);
             this.lblDisplayDueDate.Name = "lblDisplayDueDate";
-            this.lblDisplayDueDate.Size = new System.Drawing.Size(117, 25);
+            this.lblDisplayDueDate.Size = new System.Drawing.Size(85, 17);
             this.lblDisplayDueDate.TabIndex = 24;
             this.lblDisplayDueDate.Text = "display here";
             // 
@@ -107,7 +107,7 @@
             this.lblDisplayAssessmentType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisplayAssessmentType.Location = new System.Drawing.Point(670, 240);
             this.lblDisplayAssessmentType.Name = "lblDisplayAssessmentType";
-            this.lblDisplayAssessmentType.Size = new System.Drawing.Size(101, 22);
+            this.lblDisplayAssessmentType.Size = new System.Drawing.Size(69, 15);
             this.lblDisplayAssessmentType.TabIndex = 23;
             this.lblDisplayAssessmentType.Text = "Diplay here";
             // 
@@ -118,7 +118,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(494, 333);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 25);
+            this.label3.Size = new System.Drawing.Size(52, 17);
             this.label3.TabIndex = 22;
             this.label3.Text = "Status:";
             // 
@@ -129,7 +129,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(494, 285);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 25);
+            this.label2.Size = new System.Drawing.Size(72, 17);
             this.label2.TabIndex = 21;
             this.label2.Text = "Due Date:";
             // 
@@ -140,7 +140,7 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(494, 240);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(176, 25);
+            this.label4.Size = new System.Drawing.Size(124, 17);
             this.label4.TabIndex = 20;
             this.label4.Text = "Assessment Type:";
             // 
@@ -150,7 +150,7 @@
             this.checkRescheduled.AutoSize = true;
             this.checkRescheduled.Location = new System.Drawing.Point(629, 391);
             this.checkRescheduled.Name = "checkRescheduled";
-            this.checkRescheduled.Size = new System.Drawing.Size(129, 24);
+            this.checkRescheduled.Size = new System.Drawing.Size(89, 17);
             this.checkRescheduled.TabIndex = 18;
             this.checkRescheduled.Text = "Rescheduled";
             this.checkRescheduled.UseVisualStyleBackColor = true;
@@ -161,7 +161,7 @@
             this.checkMissed.AutoSize = true;
             this.checkMissed.Location = new System.Drawing.Point(808, 391);
             this.checkMissed.Name = "checkMissed";
-            this.checkMissed.Size = new System.Drawing.Size(85, 24);
+            this.checkMissed.Size = new System.Drawing.Size(59, 17);
             this.checkMissed.TabIndex = 17;
             this.checkMissed.Text = "Missed";
             this.checkMissed.UseVisualStyleBackColor = true;
@@ -172,7 +172,7 @@
             this.checkComplete.AutoSize = true;
             this.checkComplete.Location = new System.Drawing.Point(464, 391);
             this.checkComplete.Name = "checkComplete";
-            this.checkComplete.Size = new System.Drawing.Size(103, 24);
+            this.checkComplete.Size = new System.Drawing.Size(70, 17);
             this.checkComplete.TabIndex = 16;
             this.checkComplete.Text = "Complete";
             this.checkComplete.UseVisualStyleBackColor = true;
@@ -196,7 +196,7 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(494, 201);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 25);
+            this.label5.Size = new System.Drawing.Size(58, 17);
             this.label5.TabIndex = 26;
             this.label5.Text = "Module:";
             // 
@@ -207,7 +207,7 @@
             this.lblDisplayModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDisplayModule.Location = new System.Drawing.Point(573, 201);
             this.lblDisplayModule.Name = "lblDisplayModule";
-            this.lblDisplayModule.Size = new System.Drawing.Size(110, 25);
+            this.lblDisplayModule.Size = new System.Drawing.Size(80, 17);
             this.lblDisplayModule.TabIndex = 27;
             this.lblDisplayModule.Text = "Diplay here";
             // 
@@ -248,6 +248,7 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // SearchStudentAssessment
             // 

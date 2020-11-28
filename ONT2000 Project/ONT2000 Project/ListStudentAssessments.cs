@@ -7,14 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using DATAACCESSLAYER;
 
 namespace ONT2000_Project
 {
     public partial class ListStudentAssessments : Form
     {
-        public ListStudentAssessments()
+        int userID;
+        public ListStudentAssessments(int Value)
         {
             InitializeComponent();
+
+            userID = Value;
+        }
+        BusinessLogicLayer bll = new BusinessLogicLayer();
+        User user = new User();
+
+        private void ListStudentAssessments_Load(object sender, EventArgs e)
+        {
+            user.UserID = userID;
+            dgvDisplayAssessments.DataSource = bll.ListAllStudentAssessments(user);
         }
     }
 }

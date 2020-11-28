@@ -54,6 +54,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListModulesForm";
             this.Text = "ListModulesForm";
+            this.Load += new System.EventHandler(this.ListModulesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayModules)).EndInit();
             this.ResumeLayout(false);
 
