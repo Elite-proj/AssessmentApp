@@ -51,9 +51,7 @@ namespace ONT2000_Project
             ResetSearchModules();
             ResetSearchUsers();
 
-            //this.Hide();
-            //ManageUsers manageUser = new ManageUsers();
-            //manageUser.Show();
+            
         }
 
         private void btnManageModules_Click(object sender, EventArgs e)
@@ -64,10 +62,6 @@ namespace ONT2000_Project
             ResetEnrollStudent();
             ResetSearchModules();
             ResetSearchUsers();
-
-            //this.Hide();
-            //ManageModules manageModule = new ManageModules();
-            //manageModule.Show();
         }
 
         private void btnAssignLecturer_Click(object sender, EventArgs e)
