@@ -1,0 +1,2 @@
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\DATAACCESSLAYER\obj\Debug\DATAACCESSLAYER.csprojAssemblyReference.cache
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\DATAACCESSLAYER\obj\Debug\DATAACCESSLAYER.csproj.CoreCompileInputs.cache

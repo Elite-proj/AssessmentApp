@@ -51,7 +51,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(113, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 25);
+            this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Module:";
             // 
@@ -62,7 +62,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(113, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(176, 25);
+            this.label2.Size = new System.Drawing.Size(124, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Assessment Type:";
             // 
@@ -73,7 +73,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(113, 142);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 25);
+            this.label3.Size = new System.Drawing.Size(72, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Due Date:";
             // 
@@ -87,7 +87,7 @@
             this.ccmbModule.FormattingEnabled = true;
             this.ccmbModule.Location = new System.Drawing.Point(218, 14);
             this.ccmbModule.Name = "ccmbModule";
-            this.ccmbModule.Size = new System.Drawing.Size(390, 28);
+            this.ccmbModule.Size = new System.Drawing.Size(390, 21);
             this.ccmbModule.TabIndex = 3;
             // 
             // cmbAssessmentType
@@ -100,7 +100,7 @@
             this.cmbAssessmentType.FormattingEnabled = true;
             this.cmbAssessmentType.Location = new System.Drawing.Point(295, 80);
             this.cmbAssessmentType.Name = "cmbAssessmentType";
-            this.cmbAssessmentType.Size = new System.Drawing.Size(313, 28);
+            this.cmbAssessmentType.Size = new System.Drawing.Size(313, 21);
             this.cmbAssessmentType.TabIndex = 4;
             // 
             // dtpDueDate
@@ -109,7 +109,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDueDate.Location = new System.Drawing.Point(238, 142);
             this.dtpDueDate.Name = "dtpDueDate";
-            this.dtpDueDate.Size = new System.Drawing.Size(370, 26);
+            this.dtpDueDate.Size = new System.Drawing.Size(370, 20);
             this.dtpDueDate.TabIndex = 5;
             // 
             // panel1
@@ -142,6 +142,7 @@
             this.dgvDisplayAssessment.RowTemplate.Height = 28;
             this.dgvDisplayAssessment.Size = new System.Drawing.Size(869, 299);
             this.dgvDisplayAssessment.TabIndex = 20;
+            this.dgvDisplayAssessment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayAssessment_CellContentClick);
             // 
             // btnListAssessment
             // 
@@ -250,6 +251,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CreateAssessmentsForm";
             this.Text = "CreateAssessmentsForm";
+            this.Load += new System.EventHandler(this.CreateAssessmentsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayAssessment)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

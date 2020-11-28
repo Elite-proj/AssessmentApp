@@ -52,7 +52,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(465, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 25);
+            this.label1.Size = new System.Drawing.Size(93, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Filter by type:";
             // 
@@ -60,7 +60,7 @@
             // 
             this.txtSearchAssessment.Location = new System.Drawing.Point(19, 68);
             this.txtSearchAssessment.Name = "txtSearchAssessment";
-            this.txtSearchAssessment.Size = new System.Drawing.Size(241, 26);
+            this.txtSearchAssessment.Size = new System.Drawing.Size(241, 20);
             this.txtSearchAssessment.TabIndex = 1;
             // 
             // btnSearch
@@ -81,6 +81,7 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // cmbAssessmentType
             // 
@@ -91,7 +92,7 @@
             this.cmbAssessmentType.FormattingEnabled = true;
             this.cmbAssessmentType.Location = new System.Drawing.Point(600, 66);
             this.cmbAssessmentType.Name = "cmbAssessmentType";
-            this.cmbAssessmentType.Size = new System.Drawing.Size(224, 28);
+            this.cmbAssessmentType.Size = new System.Drawing.Size(224, 21);
             this.cmbAssessmentType.TabIndex = 3;
             // 
             // dgvDisplayAssessment
@@ -114,7 +115,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(466, 248);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(158, 22);
+            this.label2.Size = new System.Drawing.Size(105, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "Assessment Type:";
             // 
@@ -126,7 +127,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(466, 310);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 22);
+            this.label3.Size = new System.Drawing.Size(52, 15);
             this.label3.TabIndex = 6;
             this.label3.Text = "Module:";
             // 
@@ -138,7 +139,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(466, 376);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 22);
+            this.label4.Size = new System.Drawing.Size(62, 15);
             this.label4.TabIndex = 7;
             this.label4.Text = "Due Date:";
             // 
@@ -148,7 +149,7 @@
             this.txtAssessmentType.Enabled = false;
             this.txtAssessmentType.Location = new System.Drawing.Point(630, 243);
             this.txtAssessmentType.Name = "txtAssessmentType";
-            this.txtAssessmentType.Size = new System.Drawing.Size(194, 26);
+            this.txtAssessmentType.Size = new System.Drawing.Size(194, 20);
             this.txtAssessmentType.TabIndex = 8;
             // 
             // txtModule
@@ -157,7 +158,7 @@
             this.txtModule.Enabled = false;
             this.txtModule.Location = new System.Drawing.Point(545, 306);
             this.txtModule.Name = "txtModule";
-            this.txtModule.Size = new System.Drawing.Size(172, 26);
+            this.txtModule.Size = new System.Drawing.Size(172, 20);
             this.txtModule.TabIndex = 9;
             // 
             // dtpDueDate
@@ -165,7 +166,7 @@
             this.dtpDueDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dtpDueDate.Location = new System.Drawing.Point(577, 371);
             this.dtpDueDate.Name = "dtpDueDate";
-            this.dtpDueDate.Size = new System.Drawing.Size(227, 26);
+            this.dtpDueDate.Size = new System.Drawing.Size(227, 20);
             this.dtpDueDate.TabIndex = 10;
             // 
             // btnDeleteAssessment

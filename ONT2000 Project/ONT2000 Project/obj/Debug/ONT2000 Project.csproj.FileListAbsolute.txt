@@ -107,3 +107,30 @@ C:\Users\ELITE\Downloads\ONT2000 Project\ONT2000 Project\bin\Debug\DAL.pdb
 C:\Users\ELITE\Downloads\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.csproj.CopyComplete
 C:\Users\Chumokuhle\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.exe
 C:\Users\Chumokuhle\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.pdb
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.csprojAssemblyReference.cache
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.Administrator.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.AdminMainForm.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.CreateAssessmentsForm.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.CreateOrListAssessmentForm.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.LecturerMainForm.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ListModulesForm.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ListStudentAssessments.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ListStudentsForm.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ManageLecturerModule.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ManageModules.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ManageStudentModules.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ManageUsers.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.Registerform.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.SearchAssessmentForm.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.SearchModules.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.SearchStudentAssessment.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.SearchStudentModule.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.SearchUser.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.SignIn.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.Properties.Resources.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.StudentModuleAssessments.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.StudentsMainForm.resources
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.csproj.GenerateResource.cache
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.csproj.CoreCompileInputs.cache
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.exe
+C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.pdb

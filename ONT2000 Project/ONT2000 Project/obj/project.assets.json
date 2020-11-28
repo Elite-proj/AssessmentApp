@@ -19,18 +19,6 @@
         "runtime": {
           "bin/placeholder/BLL.dll": {}
         }
-      },
-      "D_A_L/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "BLL": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/D_A_L.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/D_A_L.dll": {}
-        }
       }
     },
     ".NETFramework,Version=v4.7.2/win": {
@@ -50,18 +38,6 @@
         },
         "runtime": {
           "bin/placeholder/BLL.dll": {}
-        }
-      },
-      "D_A_L/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "BLL": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/D_A_L.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/D_A_L.dll": {}
         }
       }
     },
@@ -83,18 +59,6 @@
         "runtime": {
           "bin/placeholder/BLL.dll": {}
         }
-      },
-      "D_A_L/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "BLL": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/D_A_L.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/D_A_L.dll": {}
-        }
       }
     },
     ".NETFramework,Version=v4.7.2/win-x86": {
@@ -114,18 +78,6 @@
         },
         "runtime": {
           "bin/placeholder/BLL.dll": {}
-        }
-      },
-      "D_A_L/1.0.0": {
-        "type": "project",
-        "dependencies": {
-          "BLL": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/D_A_L.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/D_A_L.dll": {}
         }
       }
     }
@@ -151,35 +103,29 @@
       "type": "project",
       "path": "../BLL/BLL.csproj",
       "msbuildProject": "../BLL/BLL.csproj"
-    },
-    "D_A_L/1.0.0": {
-      "type": "project",
-      "path": "../D_A_L/D_A_L.csproj",
-      "msbuildProject": "../D_A_L/D_A_L.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
       "BLL >= 1.0.0",
-      "D_A_L >= 1.0.0",
       "FontAwesome.Sharp >= 5.15.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Chumokuhle\\.nuget\\packages\\": {}
+    "C:\\Users\\Dakalo E. Munonde\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj",
+      "projectUniqueName": "C:\\Users\\Dakalo E. Munonde\\Source\\Repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj",
       "projectName": "ONT2000 Project",
-      "projectPath": "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj",
-      "packagesPath": "C:\\Users\\Chumokuhle\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\obj\\",
+      "projectPath": "C:\\Users\\Dakalo E. Munonde\\Source\\Repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj",
+      "packagesPath": "C:\\Users\\Dakalo E. Munonde\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Dakalo E. Munonde\\Source\\Repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\Chumokuhle\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Dakalo E. Munonde\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -192,11 +138,8 @@
       "frameworks": {
         "net472": {
           "projectReferences": {
-            "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\BLL\\BLL.csproj"
-            },
-            "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\D_A_L\\D_A_L.csproj": {
-              "projectPath": "C:\\Users\\Chumokuhle\\source\\repos\\ONT Project\\ONT2000 Project\\D_A_L\\D_A_L.csproj"
+            "C:\\Users\\Dakalo E. Munonde\\Source\\Repos\\ONT Project\\ONT2000 Project\\BLL\\BLL.csproj": {
+              "projectPath": "C:\\Users\\Dakalo E. Munonde\\Source\\Repos\\ONT Project\\ONT2000 Project\\BLL\\BLL.csproj"
             }
           }
         }

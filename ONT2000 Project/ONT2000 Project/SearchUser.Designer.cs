@@ -61,13 +61,14 @@
             this.dgvDisplayUser.RowTemplate.Height = 28;
             this.dgvDisplayUser.Size = new System.Drawing.Size(439, 333);
             this.dgvDisplayUser.TabIndex = 13;
+            this.dgvDisplayUser.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayUser_CellContentClick);
             // 
             // txtNameSearch
             // 
             this.txtNameSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameSearch.Location = new System.Drawing.Point(31, 57);
             this.txtNameSearch.Name = "txtNameSearch";
-            this.txtNameSearch.Size = new System.Drawing.Size(284, 30);
+            this.txtNameSearch.Size = new System.Drawing.Size(284, 23);
             this.txtNameSearch.TabIndex = 11;
             // 
             // txtEmail
@@ -76,7 +77,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(625, 391);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(319, 35);
+            this.txtEmail.Size = new System.Drawing.Size(319, 26);
             this.txtEmail.TabIndex = 33;
             // 
             // txtSurname
@@ -85,7 +86,7 @@
             this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSurname.Location = new System.Drawing.Point(669, 226);
             this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(274, 35);
+            this.txtSurname.Size = new System.Drawing.Size(274, 26);
             this.txtSurname.TabIndex = 32;
             // 
             // txtName
@@ -94,7 +95,7 @@
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(638, 176);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(305, 35);
+            this.txtName.Size = new System.Drawing.Size(305, 26);
             this.txtName.TabIndex = 31;
             // 
             // cmbTitle
@@ -104,7 +105,7 @@
             this.cmbTitle.FormattingEnabled = true;
             this.cmbTitle.Location = new System.Drawing.Point(619, 279);
             this.cmbTitle.Name = "cmbTitle";
-            this.cmbTitle.Size = new System.Drawing.Size(324, 37);
+            this.cmbTitle.Size = new System.Drawing.Size(324, 28);
             this.cmbTitle.TabIndex = 30;
             // 
             // cmbRole
@@ -114,7 +115,7 @@
             this.cmbRole.FormattingEnabled = true;
             this.cmbRole.Location = new System.Drawing.Point(624, 337);
             this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(319, 37);
+            this.cmbRole.Size = new System.Drawing.Size(319, 28);
             this.cmbRole.TabIndex = 29;
             // 
             // cmbFilterUser
@@ -124,8 +125,9 @@
             this.cmbFilterUser.FormattingEnabled = true;
             this.cmbFilterUser.Location = new System.Drawing.Point(694, 45);
             this.cmbFilterUser.Name = "cmbFilterUser";
-            this.cmbFilterUser.Size = new System.Drawing.Size(270, 37);
+            this.cmbFilterUser.Size = new System.Drawing.Size(270, 28);
             this.cmbFilterUser.TabIndex = 28;
+            this.cmbFilterUser.SelectedIndexChanged += new System.EventHandler(this.cmbFilterUser_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -135,7 +137,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(539, 397);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(80, 29);
+            this.label8.Size = new System.Drawing.Size(52, 20);
             this.label8.TabIndex = 27;
             this.label8.Text = "Email:";
             // 
@@ -147,7 +149,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(539, 337);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 29);
+            this.label7.Size = new System.Drawing.Size(46, 20);
             this.label7.TabIndex = 26;
             this.label7.Text = "Role:";
             // 
@@ -159,7 +161,7 @@
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(539, 279);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(67, 29);
+            this.label6.Size = new System.Drawing.Size(42, 20);
             this.label6.TabIndex = 25;
             this.label6.Text = "Title:";
             // 
@@ -171,7 +173,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(539, 226);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 29);
+            this.label5.Size = new System.Drawing.Size(78, 20);
             this.label5.TabIndex = 24;
             this.label5.Text = "Surname:";
             // 
@@ -183,7 +185,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(539, 179);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 29);
+            this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 23;
             this.label4.Text = "Name:";
             // 
@@ -195,7 +197,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(539, 129);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 29);
+            this.label3.Size = new System.Drawing.Size(68, 20);
             this.label3.TabIndex = 22;
             this.label3.Text = "User ID:";
             // 
@@ -207,7 +209,7 @@
             this.lblUserID.ForeColor = System.Drawing.Color.White;
             this.lblUserID.Location = new System.Drawing.Point(685, 129);
             this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(144, 29);
+            this.lblUserID.Size = new System.Drawing.Size(97, 20);
             this.lblUserID.TabIndex = 21;
             this.lblUserID.Text = "user ID here";
             // 
@@ -219,7 +221,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(524, 53);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 29);
+            this.label1.Size = new System.Drawing.Size(107, 20);
             this.label1.TabIndex = 20;
             this.label1.Text = "Filter By Role:";
             // 
@@ -262,6 +264,7 @@
             this.btnUpdateUser.Text = "UPDATE";
             this.btnUpdateUser.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUpdateUser.UseVisualStyleBackColor = true;
+            this.btnUpdateUser.Click += new System.EventHandler(this.btnUpdateUser_Click);
             // 
             // btnSearch
             // 
@@ -282,6 +285,7 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // SearchUser
             // 
@@ -311,6 +315,7 @@
             this.Name = "SearchUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SearchUser";
+            this.Load += new System.EventHandler(this.SearchUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

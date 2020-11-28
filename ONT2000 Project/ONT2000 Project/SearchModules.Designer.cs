@@ -52,7 +52,7 @@
             this.txtDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDuration.Location = new System.Drawing.Point(653, 297);
             this.txtDuration.Name = "txtDuration";
-            this.txtDuration.Size = new System.Drawing.Size(312, 35);
+            this.txtDuration.Size = new System.Drawing.Size(312, 26);
             this.txtDuration.TabIndex = 25;
             // 
             // txtModuleName
@@ -61,7 +61,7 @@
             this.txtModuleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModuleName.Location = new System.Drawing.Point(715, 244);
             this.txtModuleName.Name = "txtModuleName";
-            this.txtModuleName.Size = new System.Drawing.Size(250, 35);
+            this.txtModuleName.Size = new System.Drawing.Size(250, 26);
             this.txtModuleName.TabIndex = 24;
             // 
             // cmbModuleType
@@ -71,7 +71,7 @@
             this.cmbModuleType.FormattingEnabled = true;
             this.cmbModuleType.Location = new System.Drawing.Point(705, 355);
             this.cmbModuleType.Name = "cmbModuleType";
-            this.cmbModuleType.Size = new System.Drawing.Size(258, 37);
+            this.cmbModuleType.Size = new System.Drawing.Size(258, 28);
             this.cmbModuleType.TabIndex = 23;
             // 
             // cmbModuleFilter
@@ -81,7 +81,7 @@
             this.cmbModuleFilter.FormattingEnabled = true;
             this.cmbModuleFilter.Location = new System.Drawing.Point(724, 47);
             this.cmbModuleFilter.Name = "cmbModuleFilter";
-            this.cmbModuleFilter.Size = new System.Drawing.Size(258, 34);
+            this.cmbModuleFilter.Size = new System.Drawing.Size(258, 26);
             this.cmbModuleFilter.TabIndex = 22;
             // 
             // lblCode
@@ -92,7 +92,7 @@
             this.lblCode.ForeColor = System.Drawing.Color.White;
             this.lblCode.Location = new System.Drawing.Point(719, 184);
             this.lblCode.Name = "lblCode";
-            this.lblCode.Size = new System.Drawing.Size(127, 29);
+            this.lblCode.Size = new System.Drawing.Size(83, 20);
             this.lblCode.TabIndex = 21;
             this.lblCode.Text = "Code here";
             // 
@@ -104,7 +104,7 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(538, 358);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 29);
+            this.label5.Size = new System.Drawing.Size(103, 20);
             this.label5.TabIndex = 20;
             this.label5.Text = "Module Type:";
             // 
@@ -116,7 +116,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(538, 297);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(109, 29);
+            this.label4.Size = new System.Drawing.Size(74, 20);
             this.label4.TabIndex = 19;
             this.label4.Text = "Duration:";
             // 
@@ -128,7 +128,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(538, 244);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(171, 29);
+            this.label3.Size = new System.Drawing.Size(111, 20);
             this.label3.TabIndex = 18;
             this.label3.Text = "Module Name:";
             // 
@@ -140,7 +140,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(538, 184);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(165, 29);
+            this.label2.Size = new System.Drawing.Size(107, 20);
             this.label2.TabIndex = 17;
             this.label2.Text = "Module Code:";
             // 
@@ -152,7 +152,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(537, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 29);
+            this.label1.Size = new System.Drawing.Size(108, 20);
             this.label1.TabIndex = 16;
             this.label1.Text = "Filter By Type:";
             // 
@@ -167,6 +167,7 @@
             this.dgvDisplay.RowTemplate.Height = 28;
             this.dgvDisplay.Size = new System.Drawing.Size(470, 356);
             this.dgvDisplay.TabIndex = 30;
+            this.dgvDisplay.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplay_CellContentClick);
             // 
             // txtModuleNameSearch
             // 
@@ -174,7 +175,7 @@
             this.txtModuleNameSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModuleNameSearch.Location = new System.Drawing.Point(71, 55);
             this.txtModuleNameSearch.Name = "txtModuleNameSearch";
-            this.txtModuleNameSearch.Size = new System.Drawing.Size(273, 28);
+            this.txtModuleNameSearch.Size = new System.Drawing.Size(273, 19);
             this.txtModuleNameSearch.TabIndex = 28;
             // 
             // btnSearch
@@ -196,6 +197,7 @@
             this.btnSearch.Text = "Search";
             this.btnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnDeleteModule
             // 
@@ -236,6 +238,7 @@
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // SearchModules
             // 
