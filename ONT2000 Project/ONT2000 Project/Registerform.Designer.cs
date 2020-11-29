@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.userIcon = new FontAwesome.Sharp.IconPictureBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -46,10 +47,22 @@
             this.namePanel1 = new System.Windows.Forms.Panel();
             this.btnHide = new FontAwesome.Sharp.IconButton();
             this.btnClose = new FontAwesome.Sharp.IconButton();
+            this.nameError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.surnameError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.titleError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.roleError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.emailError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.passwordError = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nameError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.surnameError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.titleError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roleError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordError)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -308,6 +321,30 @@
             this.btnClose.MouseEnter += new System.EventHandler(this.btnClose_MouseEnter);
             this.btnClose.MouseLeave += new System.EventHandler(this.btnClose_MouseLeave);
             // 
+            // nameError
+            // 
+            this.nameError.ContainerControl = this;
+            // 
+            // surnameError
+            // 
+            this.surnameError.ContainerControl = this;
+            // 
+            // titleError
+            // 
+            this.titleError.ContainerControl = this;
+            // 
+            // roleError
+            // 
+            this.roleError.ContainerControl = this;
+            // 
+            // emailError
+            // 
+            this.emailError.ContainerControl = this;
+            // 
+            // passwordError
+            // 
+            this.passwordError.ContainerControl = this;
+            // 
             // Registerform
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -340,6 +377,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.userIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PasswordIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nameError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.surnameError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.titleError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.roleError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -365,5 +408,11 @@
         private System.Windows.Forms.Panel namePanel1;
         private FontAwesome.Sharp.IconButton btnHide;
         private FontAwesome.Sharp.IconButton btnClose;
+        private System.Windows.Forms.ErrorProvider nameError;
+        private System.Windows.Forms.ErrorProvider surnameError;
+        private System.Windows.Forms.ErrorProvider titleError;
+        private System.Windows.Forms.ErrorProvider roleError;
+        private System.Windows.Forms.ErrorProvider emailError;
+        private System.Windows.Forms.ErrorProvider passwordError;
     }
 }

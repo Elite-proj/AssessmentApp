@@ -1,0 +1,6 @@
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\DAL\bin\Debug\DAL.dll
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\DAL\bin\Debug\DAL.pdb
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\DAL\obj\Debug\DAL.dll
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\DAL\obj\Debug\DAL.pdb

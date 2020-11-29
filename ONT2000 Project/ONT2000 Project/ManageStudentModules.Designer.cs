@@ -53,7 +53,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(169, 36);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 20);
+            this.label1.Size = new System.Drawing.Size(100, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Module:";
             // 
@@ -64,7 +64,7 @@
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(169, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 20);
+            this.label2.Size = new System.Drawing.Size(101, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Student:";
             // 
@@ -75,7 +75,7 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(169, 137);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(48, 20);
+            this.label3.Size = new System.Drawing.Size(69, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Date:";
             // 
@@ -86,7 +86,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(169, 183);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 20);
+            this.label4.Size = new System.Drawing.Size(85, 29);
             this.label4.TabIndex = 3;
             this.label4.Text = "Status:";
             // 
@@ -100,7 +100,7 @@
             this.cmbModule.FormattingEnabled = true;
             this.cmbModule.Location = new System.Drawing.Point(274, 36);
             this.cmbModule.Name = "cmbModule";
-            this.cmbModule.Size = new System.Drawing.Size(566, 28);
+            this.cmbModule.Size = new System.Drawing.Size(566, 37);
             this.cmbModule.TabIndex = 4;
             // 
             // cmbStudent
@@ -114,7 +114,7 @@
             this.cmbStudent.FormattingEnabled = true;
             this.cmbStudent.Location = new System.Drawing.Point(274, 86);
             this.cmbStudent.Name = "cmbStudent";
-            this.cmbStudent.Size = new System.Drawing.Size(566, 28);
+            this.cmbStudent.Size = new System.Drawing.Size(566, 37);
             this.cmbStudent.TabIndex = 5;
             // 
             // cmbStatus
@@ -128,7 +128,7 @@
             this.cmbStatus.FormattingEnabled = true;
             this.cmbStatus.Location = new System.Drawing.Point(274, 177);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(566, 28);
+            this.cmbStatus.Size = new System.Drawing.Size(566, 37);
             this.cmbStatus.TabIndex = 6;
             // 
             // dtpDate
@@ -138,7 +138,7 @@
             this.dtpDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDate.Location = new System.Drawing.Point(274, 137);
             this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(566, 26);
+            this.dtpDate.Size = new System.Drawing.Size(566, 35);
             this.dtpDate.TabIndex = 7;
             // 
             // panel1
@@ -173,6 +173,7 @@
             this.dgvDisplayStudent.RowTemplate.Height = 28;
             this.dgvDisplayStudent.Size = new System.Drawing.Size(989, 224);
             this.dgvDisplayStudent.TabIndex = 14;
+            this.dgvDisplayStudent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayStudent_CellClick);
             // 
             // btnListStudents
             // 
@@ -198,6 +199,7 @@
             // btnDeleteStudent
             // 
             this.btnDeleteStudent.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDeleteStudent.BackColor = System.Drawing.Color.Red;
             this.btnDeleteStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteStudent.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnDeleteStudent.ForeColor = System.Drawing.Color.White;
@@ -213,7 +215,7 @@
             this.btnDeleteStudent.TabIndex = 12;
             this.btnDeleteStudent.Text = "DELETE";
             this.btnDeleteStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDeleteStudent.UseVisualStyleBackColor = true;
+            this.btnDeleteStudent.UseVisualStyleBackColor = false;
             this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click);
             // 
             // btnUpdateStudent

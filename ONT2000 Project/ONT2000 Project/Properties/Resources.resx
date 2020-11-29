@@ -127,10 +127,13 @@
   <data name="Nelson  Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Nelson  Logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AdminLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\bin\Debug\AdminLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="lecturerlogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\bin\Debug\lecturerlogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AdminLogo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\bin\Debug\AdminLogo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nmu logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nmu logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

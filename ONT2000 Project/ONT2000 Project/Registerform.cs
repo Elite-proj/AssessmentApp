@@ -8,26 +8,41 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DAL;
 
 
 namespace ONT2000_Project
 {
     public partial class Registerform : Form
     {
-        public Registerform()
+        string emailAdd;
+        string role;
+        public Registerform(string email,string type)
         {
             InitializeComponent();
+
+            emailAdd = email;
+            role = type;
         }
 
         private void Registerform_Load(object sender, EventArgs e)
         {
             HideName();
+            cmbTitle.Items.Add("Mr");
+            cmbTitle.Items.Add("Mrs");
+            cmbTitle.Items.Add("Miss");
+            cmbTitle.Items.Add("Dr");
+            cmbTitle.Items.Add("Prof");
+
+            cmbRole.Items.Add("Administrator");
+            cmbRole.Items.Add("Lecturer");
+            cmbRole.Items.Add("Student");
         }
 
         private void btnSignIn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            SignIn sign = new SignIn();
+            SignIn sign = new SignIn(emailAdd,role);
             sign.Show();
         }
 
@@ -36,26 +51,54 @@ namespace ONT2000_Project
             BusinessLogicLayer bll = new BusinessLogicLayer();
             User user = new User();
 
-            user.name = txtName.Text;
-            user.surname = txtSurname.Text;
-            user.Role = cmbRole.SelectedItem.ToString();
-            user.title = cmbTitle.SelectedItem.ToString();
-            user.email = txtEmailAddress.Text;
-            user.password = txtPassword.Text;
-            user.userStatus = "Active";
-
-            int x = bll.InsertUser(user);
-
-            if (x > 0)
+            if (string.IsNullOrEmpty(txtName.Text))
             {
-                this.Hide();
-                SignIn sign = new SignIn();
-                sign.Show();
-                MessageBox.Show(x + " user added!");
+                nameError.SetError(txtName, "Do not leave this field empty");
+            }
+            else if (string.IsNullOrEmpty(txtSurname.Text))
+            {
+                surnameError.SetError(txtSurname, "Do not leave this field empty");
+            }
+            else if (cmbTitle.SelectedItem == null)
+            {
+                titleError.SetError(cmbTitle, "Select title");
+            }
+            else if (cmbRole.SelectedItem == null)
+            {
+                roleError.SetError(cmbRole, "Select role");
+            }
+            else if (string.IsNullOrEmpty(txtEmailAddress.Text))
+            {
+                emailError.SetError(txtEmailAddress, "Do not leave this field empty");
+            }
+            else if (string.IsNullOrEmpty(txtPassword.Text))
+            {
+                passwordError.SetError(txtPassword, "Do not leave this field empty");
             }
             else
             {
-                MessageBox.Show("Failed to add user");
+
+                user.name = txtName.Text;
+                user.surname = txtSurname.Text;
+                user.Role = cmbRole.SelectedItem.ToString();
+                user.title = cmbTitle.SelectedItem.ToString();
+                user.email = txtEmailAddress.Text;
+                user.password = txtPassword.Text;
+                user.userStatus = "Active";
+
+                int x = bll.InsertUser(user);
+
+                if (x > 0)
+                {
+                    this.Hide();
+                    SignIn sign = new SignIn(emailAdd,role);
+                    sign.Show();
+                    MessageBox.Show(x + " user added!");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add user");
+                }
             }
         }
 

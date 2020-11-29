@@ -10,15 +10,6 @@
         "runtime": {
           "lib/net472/FontAwesome.Sharp.dll": {}
         }
-      },
-      "BLL/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/BLL.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BLL.dll": {}
-        }
       }
     },
     ".NETFramework,Version=v4.7.2/win": {
@@ -29,15 +20,6 @@
         },
         "runtime": {
           "lib/net472/FontAwesome.Sharp.dll": {}
-        }
-      },
-      "BLL/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/BLL.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BLL.dll": {}
         }
       }
     },
@@ -50,15 +32,6 @@
         "runtime": {
           "lib/net472/FontAwesome.Sharp.dll": {}
         }
-      },
-      "BLL/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/BLL.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BLL.dll": {}
-        }
       }
     },
     ".NETFramework,Version=v4.7.2/win-x86": {
@@ -69,15 +42,6 @@
         },
         "runtime": {
           "lib/net472/FontAwesome.Sharp.dll": {}
-        }
-      },
-      "BLL/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/BLL.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/BLL.dll": {}
         }
       }
     }
@@ -98,34 +62,28 @@
         "lib/net48/FontAwesome.Sharp.dll",
         "lib/netcoreapp3.1/FontAwesome.Sharp.dll"
       ]
-    },
-    "BLL/1.0.0": {
-      "type": "project",
-      "path": "../BLL/BLL.csproj",
-      "msbuildProject": "../BLL/BLL.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.2": [
-      "BLL >= 1.0.0",
       "FontAwesome.Sharp >= 5.15.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dakalo E. Munonde\\.nuget\\packages\\": {}
+    "C:\\Users\\ELITE\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dakalo E. Munonde\\Source\\Repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj",
+      "projectUniqueName": "C:\\Users\\ELITE\\source\\repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj",
       "projectName": "ONT2000 Project",
-      "projectPath": "C:\\Users\\Dakalo E. Munonde\\Source\\Repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj",
-      "packagesPath": "C:\\Users\\Dakalo E. Munonde\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dakalo E. Munonde\\Source\\Repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\obj\\",
+      "projectPath": "C:\\Users\\ELITE\\source\\repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\ONT2000 Project.csproj",
+      "packagesPath": "C:\\Users\\ELITE\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ELITE\\source\\repos\\ONT Project\\ONT2000 Project\\ONT2000 Project\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\Dakalo E. Munonde\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ELITE\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -137,11 +95,7 @@
       },
       "frameworks": {
         "net472": {
-          "projectReferences": {
-            "C:\\Users\\Dakalo E. Munonde\\Source\\Repos\\ONT Project\\ONT2000 Project\\BLL\\BLL.csproj": {
-              "projectPath": "C:\\Users\\Dakalo E. Munonde\\Source\\Repos\\ONT Project\\ONT2000 Project\\BLL\\BLL.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       }
     },

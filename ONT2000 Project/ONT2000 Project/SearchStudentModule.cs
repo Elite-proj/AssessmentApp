@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
-using DATAACCESSLAYER;
+using DAL;
+
 
 namespace ONT2000_Project
 {
@@ -26,7 +27,7 @@ namespace ONT2000_Project
         User user = new User();
         private void SearchStudentModule_Load(object sender, EventArgs e)
         {
-
+            btnSave.Visible = false;
             dtpDate.Visible = false;
         }
 
@@ -53,32 +54,58 @@ namespace ONT2000_Project
         private void btnSave_Click(object sender, EventArgs e)
         {
             StudentAssessment student = new StudentAssessment();
-            student.userID = userID;
-            student.assessmentID = int.Parse(dgvDisplayAssessment.SelectedRows[0].Cells["AssessmentID"].Value.ToString());
-            student.date = dtpDate.Value.ToString();
 
-            if (checkComplete.Checked == true)
+            if (checkMissed.Checked != true || checkComplete.Checked != true)
             {
-                student.status = "Complete";
-            }
-            else if (checkMissed.Checked == true)
-            {
-                student.status = "Missed";
-            }
-
-            int x = bll.SaveStudentAssessment(student);
-
-            if (x > 0)
-            {
-                MessageBox.Show("Successfuly Saved assessmentt");
+                errorCheck.SetError(btnSave, "Check a box");
             }
             else
             {
-                MessageBox.Show("Failed to save assessment");
+                student.userID = userID;
+                student.assessmentID = int.Parse(dgvDisplayAssessment.SelectedRows[0].Cells["AssessmentID"].Value.ToString());
+                student.date = dtpDate.Value.ToString();
+
+
+                if (checkComplete.Checked == true)
+                {
+                    student.status = "Complete";
+                }
+                else if (checkMissed.Checked == true)
+                {
+                    student.status = "Missed";
+                }
+
+
+
+
+                int x = bll.SaveStudentAssessment(student);
+
+                if (x > 0)
+                {
+                    MessageBox.Show("Successfully Saved assessmentt");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to save assessment");
+                }
             }
         }
 
-        private void dgvDisplayAssessment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       
+
+        private void checkComplete_Click(object sender, EventArgs e)
+        {
+            checkMissed.CheckState = CheckState.Unchecked;
+           
+        }
+
+        private void checkMissed_Click(object sender, EventArgs e)
+        {
+            checkComplete.CheckState = CheckState.Unchecked;
+            
+        }
+
+        private void dgvDisplayAssessment_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Assessment assess = new Assessment();
             DataTable dt = new DataTable();
@@ -98,6 +125,13 @@ namespace ONT2000_Project
             {
                 lblDisplayAssessmentType.Text = dt.Rows[0]["AssessmentDescription"].ToString();
                 lblDisplayDueDate.Text = dt.Rows[0]["DueDate"].ToString();
+
+
+               
+                 btnSave.Visible = true;
+
+                
+
             }
         }
     }

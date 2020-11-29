@@ -103,6 +103,16 @@ namespace ONT2000_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nmu_logo {
+            get {
+                object obj = ResourceManager.GetObject("nmu logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap studentlogo {
             get {
                 object obj = ResourceManager.GetObject("studentlogo", resourceCulture);

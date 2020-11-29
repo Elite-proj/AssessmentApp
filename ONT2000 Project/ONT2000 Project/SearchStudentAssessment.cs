@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DAL;
 using BLL;
-using DATAACCESSLAYER;
+
 
 namespace ONT2000_Project
 {
@@ -30,7 +31,8 @@ namespace ONT2000_Project
             cmbFilter.Items.Add("Missed");
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+       
+        private void cmbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             student.userID = getUserID;
             student.status = cmbFilter.SelectedItem.ToString();

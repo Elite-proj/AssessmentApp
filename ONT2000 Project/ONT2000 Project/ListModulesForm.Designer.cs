@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvDisplayModules = new System.Windows.Forms.DataGridView();
+            this.childFormPanel = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayModules)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,12 +45,22 @@
             this.dgvDisplayModules.RowTemplate.Height = 28;
             this.dgvDisplayModules.Size = new System.Drawing.Size(845, 576);
             this.dgvDisplayModules.TabIndex = 0;
+            this.dgvDisplayModules.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayModules_CellClick);
+            this.dgvDisplayModules.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayModules_CellContentClick);
+            // 
+            // childFormPanel
+            // 
+            this.childFormPanel.Location = new System.Drawing.Point(2, 2);
+            this.childFormPanel.Name = "childFormPanel";
+            this.childFormPanel.Size = new System.Drawing.Size(869, 600);
+            this.childFormPanel.TabIndex = 2;
             // 
             // ListModulesForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(869, 600);
+            this.Controls.Add(this.childFormPanel);
             this.Controls.Add(this.dgvDisplayModules);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ListModulesForm";
@@ -63,5 +74,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvDisplayModules;
+        private System.Windows.Forms.Panel childFormPanel;
     }
 }

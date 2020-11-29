@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BLL;
+
 
 namespace ONT2000_Project
 {
@@ -15,16 +15,18 @@ namespace ONT2000_Project
     {
         int getUserID;
         string userType;
-        public StudentsMainForm(int value, string type)
+        string profile;
+        public StudentsMainForm(int value, string type,string names)
         {
             InitializeComponent();
             getUserID = value;
             userType = type;
+            profile = names;
         }
 
         private void StudentsMainForm_Load(object sender, EventArgs e)
         {
-
+            lblProfile.Text = profile;
         }
 
         private void btnListModules_Click(object sender, EventArgs e)
@@ -61,7 +63,17 @@ namespace ONT2000_Project
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            currentTabIcon.IconChar = FontAwesome.Sharp.IconChar.Home;
+            lblCurrentTab.Text = "Home";
 
+            childFormPanel.Controls.Clear();
+
+            childFormPanel.Controls.Add(pictureBox2);
+
+            ResetListModules();
+            ResetSearchAssessment();
+            ResetSearchModule();
+            ResetListAssessments();
         }
 
         //Userinterface code
@@ -79,7 +91,9 @@ namespace ONT2000_Project
             currentTabIcon.IconChar = FontAwesome.Sharp.IconChar.Book;
             lblCurrentTab.Text = "Your Modules";
 
-            ListModulesForm list = new ListModulesForm();
+            bool back = true;
+
+            ListModulesForm list = new ListModulesForm(getUserID, userType, back);
             list.TopLevel = false;
             list.Dock = DockStyle.Fill;
             childFormPanel.Controls.Add(list);
@@ -99,7 +113,7 @@ namespace ONT2000_Project
             currentTabIcon.IconChar = FontAwesome.Sharp.IconChar.Search;
             lblCurrentTab.Text = "Search Assessments";
 
-            SearchStudentAssessment search = new SearchStudentAssessment();
+            SearchStudentAssessment search = new SearchStudentAssessment(getUserID);
             search.TopLevel = false;
             search.Dock = DockStyle.Fill;
             childFormPanel.Controls.Add(search);
@@ -119,7 +133,7 @@ namespace ONT2000_Project
             currentTabIcon.IconChar = FontAwesome.Sharp.IconChar.Search;
             lblCurrentTab.Text = "Search Module";
 
-            SearchStudentModule search = new SearchStudentModule();
+            SearchStudentModule search = new SearchStudentModule(getUserID);
             search.TopLevel = false;
             search.Dock = DockStyle.Fill;
             childFormPanel.Controls.Add(search);
@@ -139,7 +153,7 @@ namespace ONT2000_Project
             currentTabIcon.IconChar = FontAwesome.Sharp.IconChar.List;
             lblCurrentTab.Text = "List Assessments";
 
-            ListStudentAssessments list = new ListStudentAssessments();
+            ListStudentAssessments list = new ListStudentAssessments(getUserID);
             list.TopLevel = false;
             list.Dock = DockStyle.Fill;
             childFormPanel.Controls.Add(list);
@@ -177,6 +191,9 @@ namespace ONT2000_Project
             btnSearchModule.BackColor = Color.Navy;
             btnSearchModule.FlatAppearance.BorderSize = 0;
             btnSearchModule.ForeColor = Color.White;
+
+            //SearchStudentModule search = new SearchStudentModule(getUserID);
+            //search.Hide();
         }
 
         public void ResetListAssessments()
@@ -186,6 +203,13 @@ namespace ONT2000_Project
             btnListAssessments.BackColor = Color.Navy;
             btnListAssessments.FlatAppearance.BorderSize = 0;
             btnListAssessments.ForeColor = Color.White;
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PasswordCreationForm pass = new PasswordCreationForm();
+            pass.Show();
         }
     }
 }

@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using DAL;
 
 namespace ONT2000_Project
 {
     public partial class CreateAssessmentsForm : Form
     {
-        public CreateAssessmentsForm()
+        int userID;
+        public CreateAssessmentsForm(int value)
         {
             InitializeComponent();
+            userID = value;
         }
 
         private void btnAddAssessment_Click(object sender, EventArgs e)
@@ -22,51 +26,71 @@ namespace ONT2000_Project
             BusinessLogicLayer bll = new BusinessLogicLayer();
             Assessment assess = new Assessment();
 
-            assess.decription = txtDescription.Text;
-            assess.AssessmentTypeID = int.Parse(cmbAssessmentType.SelectedValue.ToString());
-            assess.DueDate = dtpDueDate.Value.ToString();
-            assess.StudentLecturerModuleID = int.Parse(cmbModule.SelectedValue.ToString());
-            assess.AssessmentStatus = "Active";
-
-            int x = bll.InsertAssessment(assess);
-
-            if (x > 0)
+            if (cmbModule.SelectedItem == null)
             {
-                MessageBox.Show("Assessment Added");
+                moduleError.SetError(cmbModule, "Please select module");
+            }
+            else if (string.IsNullOrEmpty(txtDescription.Text))
+            {
+                descriptionError.SetError(txtDescription, "Do not leave this field empty");
+            }
+            else if (cmbAssessmentType.SelectedItem == null)
+            {
+                typeError.SetError(cmbAssessmentType, "Select assessment type first");
             }
             else
             {
-                MessageBox.Show("Failed to add");
-            }
 
-        }
+                assess.decription = txtDescription.Text;
+                assess.AssessmentTypeID = int.Parse(cmbAssessmentType.SelectedValue.ToString());
+                assess.DueDate = dtpDueDate.Value.ToString();
+                assess.StudentLecturerModuleID = int.Parse(cmbModule.SelectedValue.ToString());
+                assess.AssessmentStatus = "Active";
 
-        private void btnUpdateAssessment_Click(object sender, EventArgs e)
-        {
-            BusinessLogicLayer bll = new BusinessLogicLayer();
-            Assessment assess = new Assessment();
+                int x = bll.InsertAssessment(assess);
 
-            assess.decription = txtDescription.Text;
-            assess.AssessmentTypeID = int.Parse(cmbAssessmentType.SelectedValue.ToString());
-            assess.DueDate = dtpDueDate.Value.ToString();
-            assess.StudentLecturerModuleID = int.Parse(cmbModule.SelectedValue.ToString());
-            assess.AssessmentStatus = cmbStatus.SelectedItem.ToString();
-
-            int x = bll.UpdateAssessment(assess);
-
-            if (x > 0)
-            {
-                MessageBox.Show("Successfuly updated assessment");
-            }
-            else
-            {
-                MessageBox.Show("Failed to update assessment");
+                if (x > 0)
+                {
+                    MessageBox.Show("Assessment Added");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to add");
+                }
+                btnDeleteAssessment.Enabled = false;
             }
         }
+
+       
 
         private void btnDeleteAssessment_Click(object sender, EventArgs e)
         {
+            BusinessLogicLayer bll = new BusinessLogicLayer();
+            Assessment assess = new Assessment();
+            assess.assessmentID = int.Parse(dgvDisplayAssessment.SelectedRows[0].Cells["AssessmentID"].Value.ToString());
+            User user = new User();
+            user.UserID = userID;
 
+            int x = bll.DeleteAssessment(assess);
+
+            if (x > 0)
+            {
+                MessageBox.Show("Successfully deleted assessment");
+            }
+            else
+            {
+                MessageBox.Show("Failed to delete assessment");
+            }
+
+            dgvDisplayAssessment.DataSource = bll.ListAssessment(user);
+
+            txtDescription.Enabled = true;
+            cmbModule.Enabled = true;
+            cmbAssessmentType.Enabled = true;
+            lblDueDate.Visible = true;
+            dtpDueDate.Visible = true;
+            btnDeleteAssessment.Enabled = false;
+            btnAddAssessment.Enabled = true;
         }
 
         private void btnListAssessment_Click(object sender, EventArgs e)
@@ -76,10 +100,32 @@ namespace ONT2000_Project
             user.UserID = userID;
 
             dgvDisplayAssessment.DataSource = bll.ListAssessment(user);
+
+            btnDeleteAssessment.Enabled = false;
+            btnAddAssessment.Enabled = true;
+            txtDescription.Enabled = false;
+            cmbAssessmentType.Enabled = false;
+            cmbModule.Enabled = false;
+            dtpDueDate.Enabled = false;
+
+            txtDescription.Enabled = true;
+            cmbAssessmentType.Enabled = true;
+            cmbModule.Enabled = true;
+            dtpDueDate.Enabled = true;
         }
 
         private void CreateAssessmentsForm_Load(object sender, EventArgs e)
         {
+            btnDeleteAssessment.Enabled = false;
+            btnAddAssessment.Enabled = true;
+
+           
+            btnAddAssessment.Enabled = true;
+            txtDescription.Enabled = true;
+            cmbAssessmentType.Enabled = true;
+            cmbModule.Enabled = true;
+            dtpDueDate.Enabled = true;
+
             User user = new User();
             BusinessLogicLayer bll = new BusinessLogicLayer();
             DataTable dt = new DataTable();
@@ -95,10 +141,11 @@ namespace ONT2000_Project
             cmbAssessmentType.ValueMember = "AssessmentTypeID";
             cmbAssessmentType.DisplayMember = "AssessmentTypeDescription";
 
-            cmbStatus.Visible = false;
         }
 
-        private void dgvDisplayAssessment_CellContentClick(object sender, DataGridViewCellEventArgs e)
+       
+
+        private void dgvDisplayAssessment_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataTable dt = new DataTable();
             BusinessLogicLayer bll = new BusinessLogicLayer();
@@ -117,27 +164,19 @@ namespace ONT2000_Project
             if (dgvDisplayAssessment.SelectedRows.Count > 0)
             {
                 txtDescription.Text = dt.Rows[0]["AssessmentDescription"].ToString();
-                cmbAssessmentType.SelectedItem = dt.Rows[0]["AssessmentTypeDescription"].ToString();
-                cmbModule.SelectedItem = dt.Rows[0]["ModuleName"].ToString();
+                txtDescription.Enabled = false;
                 cmbAssessmentType.Text = dt.Rows[0]["AssessmentTypeDescription"].ToString();
+                cmbAssessmentType.Enabled = false;
                 cmbModule.Text = dt.Rows[0]["ModuleName"].ToString();
+                cmbModule.Enabled = false;
 
-                User user = new User();
-                user.UserID = userID;
+                dtpDueDate.Visible = false;
+                lblDueDate.Visible = false;
 
-                dt = bll.GetLecturerModuleByUserID(user);
-
-                cmbModule.DataSource = dt;
-                cmbModule.ValueMember = "ModuleID";
-                cmbModule.DisplayMember = "ModuleName";
-
-                cmbAssessmentType.DataSource = bll.ListAssessmentType();
-                cmbAssessmentType.ValueMember = "AssessmentTypeID";
-                cmbAssessmentType.DisplayMember = "AssessmentTypeDescription";
-                cmbStatus.Visible = true;
-                cmbStatus.Items.Add("Active");
-                cmbStatus.Items.Add("In-Active");
+                btnDeleteAssessment.Enabled = true;
+                btnAddAssessment.Enabled = false;
 
             }
         }
+    }
 }

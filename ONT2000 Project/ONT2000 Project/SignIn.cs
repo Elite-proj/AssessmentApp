@@ -9,25 +9,44 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using DAL;
 
 namespace ONT2000_Project
 {
     public partial class SignIn : Form
     {
-        public SignIn()
+        string emailAdd;
+        string role;
+        public SignIn(string email,string type)
         {
             InitializeComponent();
+            emailAdd = email;
+            role = type;
             
         }
 
         private void SignIn_Load(object sender, EventArgs e)
         {
             //DataAccessLayer dal = new DataAccessLayer();
+
+            if (role == "Student" || role == "Lecturer")
+            {
+                btnRegister.Visible = false;
+                txtEmail.Text = emailAdd;
+                txtEmail.Enabled = false;
+            }
+            else if (role == "Administrator")
+            {
+                btnRegister.Visible = true;
+                txtEmail.Text = emailAdd;
+                txtEmail.Enabled = true;
+            }
+            
         }
         private void btnRegister_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Registerform reg = new Registerform();
+            Registerform reg = new Registerform(emailAdd,role);
             reg.Show();
         }
 
@@ -36,37 +55,49 @@ namespace ONT2000_Project
             BusinessLogicLayer bll = new BusinessLogicLayer();
             DataTable dt = new DataTable();
 
-            dt = bll.SignIn(txtEmail.Text, txtPassword.Text);
-
-            if (dt.Rows.Count > 0)
+            if (string.IsNullOrEmpty(txtEmail.Text))
             {
-                string userType = dt.Rows[0]["Role"].ToString();
-                int Id = int.Parse(dt.Rows[0]["UserID"].ToString());
-
-                if (userType == "Administrator")
-                {
-                    this.Hide();
-                    AdminMainForm admin = new AdminMainForm();
-                    admin.Show();
-                }
-                else if (userType == "Lecturer")
-                {
-
-                    this.Hide();
-                    LecturerMainForm lect = new LecturerMainForm(Id, userType);
-                    lect.Show();
-                }
-                else if (userType == "Student")
-                {
-                    this.Hide();
-                    StudentsMainForm stud = new StudentsMainForm(Id, userType);
-                    stud.Show();
-                }
-
+                emailError.SetError(txtEmail, "Do not leave this field empty");
+            }
+            else if (string.IsNullOrEmpty(txtPassword.Text))
+            {
+                passwordError.SetError(txtPassword, "Do not leave this field empty");
             }
             else
             {
-                MessageBox.Show("User not found!");
+                dt = bll.SignIn(txtEmail.Text, txtPassword.Text);
+
+                if (dt.Rows.Count > 0)
+                {
+                    string userType = dt.Rows[0]["Role"].ToString();
+                    int Id = int.Parse(dt.Rows[0]["UserID"].ToString());
+                    string names = dt.Rows[0]["Name"].ToString() + " " + dt.Rows[0]["Surname"].ToString();
+
+                    if (userType == "Administrator")
+                    {
+                        this.Hide();
+                        AdminMainForm admin = new AdminMainForm(names);
+                        admin.Show();
+                    }
+                    else if (userType == "Lecturer")
+                    {
+
+                        this.Hide();
+                        LecturerMainForm lect = new LecturerMainForm(Id, userType, names);
+                        lect.Show();
+                    }
+                    else if (userType == "Student")
+                    {
+                        this.Hide();
+                        StudentsMainForm stud = new StudentsMainForm(Id, userType, names);
+                        stud.Show();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("User not found!");
+                }
             }
         }
 

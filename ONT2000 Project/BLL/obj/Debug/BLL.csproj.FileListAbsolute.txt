@@ -1,4 +1,9 @@
-C:\Users\Chumokuhle\source\repos\ONT Project\ONT2000 Project\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
-C:\Users\Chumokuhle\source\repos\ONT Project\ONT2000 Project\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
-C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
-C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\BLL\bin\Debug\BLL.dll
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\BLL\bin\Debug\BLL.pdb
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\BLL\bin\Debug\DAL.dll
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\BLL\bin\Debug\DAL.pdb
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\BLL\obj\Debug\BLL.dll
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\BLL\obj\Debug\BLL.pdb

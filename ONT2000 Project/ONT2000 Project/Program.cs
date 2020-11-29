@@ -16,7 +16,7 @@ namespace ONT2000_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SignIn());
+            Application.Run(new PasswordCreationForm());
         }
     }
 }

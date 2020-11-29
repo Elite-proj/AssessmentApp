@@ -21,5 +21,10 @@ namespace ONT2000_Project
         {
 
         }
+
+        private void CreateOrListAssessmentForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

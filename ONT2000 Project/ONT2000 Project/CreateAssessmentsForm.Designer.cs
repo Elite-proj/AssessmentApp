@@ -28,95 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.ccmbModule = new System.Windows.Forms.ComboBox();
-            this.cmbAssessmentType = new System.Windows.Forms.ComboBox();
-            this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvDisplayAssessment = new System.Windows.Forms.DataGridView();
             this.btnListAssessment = new FontAwesome.Sharp.IconButton();
             this.btnDeleteAssessment = new FontAwesome.Sharp.IconButton();
-            this.btnUpdateAssessment = new FontAwesome.Sharp.IconButton();
             this.btnAddAssessment = new FontAwesome.Sharp.IconButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
+            this.cmbAssessmentType = new System.Windows.Forms.ComboBox();
+            this.cmbModule = new System.Windows.Forms.ComboBox();
+            this.lblDueDate = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.moduleError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.descriptionError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.typeError = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayAssessment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descriptionError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeError)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(113, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Module:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(113, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 17);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Assessment Type:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(113, 142);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 17);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Due Date:";
-            // 
-            // ccmbModule
-            // 
-            this.ccmbModule.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ccmbModule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.ccmbModule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ccmbModule.ForeColor = System.Drawing.Color.White;
-            this.ccmbModule.FormattingEnabled = true;
-            this.ccmbModule.Location = new System.Drawing.Point(218, 14);
-            this.ccmbModule.Name = "ccmbModule";
-            this.ccmbModule.Size = new System.Drawing.Size(390, 21);
-            this.ccmbModule.TabIndex = 3;
-            // 
-            // cmbAssessmentType
-            // 
-            this.cmbAssessmentType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbAssessmentType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.cmbAssessmentType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbAssessmentType.ForeColor = System.Drawing.Color.White;
-            this.cmbAssessmentType.FormattingEnabled = true;
-            this.cmbAssessmentType.Location = new System.Drawing.Point(295, 80);
-            this.cmbAssessmentType.Name = "cmbAssessmentType";
-            this.cmbAssessmentType.Size = new System.Drawing.Size(313, 21);
-            this.cmbAssessmentType.TabIndex = 4;
-            // 
-            // dtpDueDate
-            // 
-            this.dtpDueDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtpDueDate.Location = new System.Drawing.Point(238, 142);
-            this.dtpDueDate.Name = "dtpDueDate";
-            this.dtpDueDate.Size = new System.Drawing.Size(370, 20);
-            this.dtpDueDate.TabIndex = 5;
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(-2, 179);
+            this.panel1.Location = new System.Drawing.Point(-2, 217);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(869, 1);
             this.panel1.TabIndex = 6;
@@ -125,7 +65,7 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(-2, 257);
+            this.panel2.Location = new System.Drawing.Point(-2, 295);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(870, 1);
             this.panel2.TabIndex = 7;
@@ -136,13 +76,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDisplayAssessment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDisplayAssessment.Location = new System.Drawing.Point(-2, 289);
+            this.dgvDisplayAssessment.Location = new System.Drawing.Point(-2, 328);
             this.dgvDisplayAssessment.Name = "dgvDisplayAssessment";
             this.dgvDisplayAssessment.RowHeadersWidth = 62;
             this.dgvDisplayAssessment.RowTemplate.Height = 28;
-            this.dgvDisplayAssessment.Size = new System.Drawing.Size(869, 299);
+            this.dgvDisplayAssessment.Size = new System.Drawing.Size(869, 260);
             this.dgvDisplayAssessment.TabIndex = 20;
-            this.dgvDisplayAssessment.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayAssessment_CellContentClick);
+            this.dgvDisplayAssessment.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayAssessment_CellClick);
             // 
             // btnListAssessment
             // 
@@ -155,7 +95,7 @@
             this.btnListAssessment.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnListAssessment.IconSize = 35;
             this.btnListAssessment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnListAssessment.Location = new System.Drawing.Point(624, 195);
+            this.btnListAssessment.Location = new System.Drawing.Point(343, 233);
             this.btnListAssessment.Name = "btnListAssessment";
             this.btnListAssessment.Rotation = 0D;
             this.btnListAssessment.Size = new System.Drawing.Size(172, 47);
@@ -169,6 +109,7 @@
             // btnDeleteAssessment
             // 
             this.btnDeleteAssessment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnDeleteAssessment.BackColor = System.Drawing.Color.Red;
             this.btnDeleteAssessment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteAssessment.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnDeleteAssessment.ForeColor = System.Drawing.Color.White;
@@ -177,36 +118,15 @@
             this.btnDeleteAssessment.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDeleteAssessment.IconSize = 35;
             this.btnDeleteAssessment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteAssessment.Location = new System.Drawing.Point(436, 195);
+            this.btnDeleteAssessment.Location = new System.Drawing.Point(561, 233);
             this.btnDeleteAssessment.Name = "btnDeleteAssessment";
             this.btnDeleteAssessment.Rotation = 0D;
             this.btnDeleteAssessment.Size = new System.Drawing.Size(172, 47);
             this.btnDeleteAssessment.TabIndex = 18;
             this.btnDeleteAssessment.Text = "DELETE";
             this.btnDeleteAssessment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDeleteAssessment.UseVisualStyleBackColor = true;
+            this.btnDeleteAssessment.UseVisualStyleBackColor = false;
             this.btnDeleteAssessment.Click += new System.EventHandler(this.btnDeleteAssessment_Click);
-            // 
-            // btnUpdateAssessment
-            // 
-            this.btnUpdateAssessment.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnUpdateAssessment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateAssessment.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnUpdateAssessment.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateAssessment.IconChar = FontAwesome.Sharp.IconChar.SyncAlt;
-            this.btnUpdateAssessment.IconColor = System.Drawing.Color.White;
-            this.btnUpdateAssessment.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnUpdateAssessment.IconSize = 35;
-            this.btnUpdateAssessment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateAssessment.Location = new System.Drawing.Point(238, 195);
-            this.btnUpdateAssessment.Name = "btnUpdateAssessment";
-            this.btnUpdateAssessment.Rotation = 0D;
-            this.btnUpdateAssessment.Size = new System.Drawing.Size(172, 47);
-            this.btnUpdateAssessment.TabIndex = 17;
-            this.btnUpdateAssessment.Text = "UPDATE";
-            this.btnUpdateAssessment.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUpdateAssessment.UseVisualStyleBackColor = true;
-            this.btnUpdateAssessment.Click += new System.EventHandler(this.btnUpdateAssessment_Click);
             // 
             // btnAddAssessment
             // 
@@ -219,7 +139,7 @@
             this.btnAddAssessment.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAddAssessment.IconSize = 35;
             this.btnAddAssessment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddAssessment.Location = new System.Drawing.Point(41, 195);
+            this.btnAddAssessment.Location = new System.Drawing.Point(117, 233);
             this.btnAddAssessment.Name = "btnAddAssessment";
             this.btnAddAssessment.Rotation = 0D;
             this.btnAddAssessment.Size = new System.Drawing.Size(172, 47);
@@ -230,48 +150,157 @@
             this.btnAddAssessment.UseVisualStyleBackColor = true;
             this.btnAddAssessment.Click += new System.EventHandler(this.btnAddAssessment_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(112, 73);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(253, 29);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Assesment Decription:";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(371, 63);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(401, 39);
+            this.txtDescription.TabIndex = 29;
+            // 
+            // dtpDueDate
+            // 
+            this.dtpDueDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtpDueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDueDate.Location = new System.Drawing.Point(218, 162);
+            this.dtpDueDate.Name = "dtpDueDate";
+            this.dtpDueDate.Size = new System.Drawing.Size(543, 35);
+            this.dtpDueDate.TabIndex = 28;
+            // 
+            // cmbAssessmentType
+            // 
+            this.cmbAssessmentType.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbAssessmentType.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cmbAssessmentType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbAssessmentType.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAssessmentType.ForeColor = System.Drawing.Color.White;
+            this.cmbAssessmentType.FormattingEnabled = true;
+            this.cmbAssessmentType.Location = new System.Drawing.Point(318, 110);
+            this.cmbAssessmentType.Name = "cmbAssessmentType";
+            this.cmbAssessmentType.Size = new System.Drawing.Size(443, 40);
+            this.cmbAssessmentType.TabIndex = 27;
+            // 
+            // cmbModule
+            // 
+            this.cmbModule.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbModule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cmbModule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbModule.ForeColor = System.Drawing.Color.White;
+            this.cmbModule.FormattingEnabled = true;
+            this.cmbModule.Location = new System.Drawing.Point(218, 12);
+            this.cmbModule.Name = "cmbModule";
+            this.cmbModule.Size = new System.Drawing.Size(543, 40);
+            this.cmbModule.TabIndex = 26;
+            // 
+            // lblDueDate
+            // 
+            this.lblDueDate.AutoSize = true;
+            this.lblDueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDueDate.ForeColor = System.Drawing.Color.White;
+            this.lblDueDate.Location = new System.Drawing.Point(112, 170);
+            this.lblDueDate.Name = "lblDueDate";
+            this.lblDueDate.Size = new System.Drawing.Size(100, 25);
+            this.lblDueDate.TabIndex = 25;
+            this.lblDueDate.Text = "Due Date:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(112, 121);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(210, 29);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Assessment Type:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(112, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 29);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Module:";
+            // 
+            // moduleError
+            // 
+            this.moduleError.ContainerControl = this;
+            // 
+            // descriptionError
+            // 
+            this.descriptionError.ContainerControl = this;
+            // 
+            // typeError
+            // 
+            this.typeError.ContainerControl = this;
+            // 
             // CreateAssessmentsForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(869, 600);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.dtpDueDate);
+            this.Controls.Add(this.cmbAssessmentType);
+            this.Controls.Add(this.cmbModule);
+            this.Controls.Add(this.lblDueDate);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDisplayAssessment);
             this.Controls.Add(this.btnListAssessment);
             this.Controls.Add(this.btnDeleteAssessment);
-            this.Controls.Add(this.btnUpdateAssessment);
             this.Controls.Add(this.btnAddAssessment);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dtpDueDate);
-            this.Controls.Add(this.cmbAssessmentType);
-            this.Controls.Add(this.ccmbModule);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CreateAssessmentsForm";
             this.Text = "CreateAssessmentsForm";
             this.Load += new System.EventHandler(this.CreateAssessmentsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayAssessment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.descriptionError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.typeError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox ccmbModule;
-        private System.Windows.Forms.ComboBox cmbAssessmentType;
-        private System.Windows.Forms.DateTimePicker dtpDueDate;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnListAssessment;
         private FontAwesome.Sharp.IconButton btnDeleteAssessment;
-        private FontAwesome.Sharp.IconButton btnUpdateAssessment;
         private FontAwesome.Sharp.IconButton btnAddAssessment;
         private System.Windows.Forms.DataGridView dgvDisplayAssessment;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtDescription;
+        private System.Windows.Forms.DateTimePicker dtpDueDate;
+        private System.Windows.Forms.ComboBox cmbAssessmentType;
+        private System.Windows.Forms.ComboBox cmbModule;
+        private System.Windows.Forms.Label lblDueDate;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider moduleError;
+        private System.Windows.Forms.ErrorProvider descriptionError;
+        private System.Windows.Forms.ErrorProvider typeError;
     }
 }

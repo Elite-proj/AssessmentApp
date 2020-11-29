@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using DAL;
 
 namespace ONT2000_Project
 {
@@ -21,68 +23,129 @@ namespace ONT2000_Project
         LecturerModule lecMod = new LecturerModule();
         private void btnUpdateLecturer_Click(object sender, EventArgs e)
         {
-            lecMod.lecturerModuleID = int.Parse(dataGridView1.SelectedRows[0].Cells["LecturerModuleID"].Value.ToString());
-            lecMod.userID = int.Parse(cmbLecturer.SelectedValue.ToString());
-            lecMod.moduleID = int.Parse(cmbModule.SelectedValue.ToString());
-            lecMod.date = dtpDate.Value.ToString();
-            lecMod.status = cmbStatus.SelectedItem.ToString();
 
-            int x = bll.UpdateLecturerModule(lecMod);
-
-            if (x > 0)
+            if (cmbModule.SelectedItem == null)
             {
-                MessageBox.Show("Successfuly Updated");
+                cmbModuleError.SetError(cmbModule, "Please select module before you continue");
+            }
+            else if (cmbLecturer.SelectedItem == null)
+            {
+                cmbLecturerError.SetError(cmbLecturer, "Please select lecturer before you continue");
+            }
+            else if (cmbStatus.SelectedItem == null)
+            {
+                cmbStatusError.SetError(cmbStatus, "Please select lecturer before you continue");
             }
             else
             {
-                MessageBox.Show("Failed to update");
+
+                lecMod.lecturerModuleID = int.Parse(dataGridView1.SelectedRows[0].Cells["LecturerModuleID"].Value.ToString());
+                lecMod.userID = int.Parse(cmbLecturer.SelectedValue.ToString());
+
+                lecMod.date = dtpDate.Value.ToString();
+                lecMod.status = cmbStatus.SelectedItem.ToString();
+
+                int x = bll.UpdateLecturerModule(lecMod);
+
+                if (x > 0)
+                {
+                    MessageBox.Show("Successfully Updated");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update");
+                }
+
+                dataGridView1.DataSource = bll.ListAssignedLecturers();
+                btnAssignLecturer.Enabled = true;
+                cmbModule.Enabled = true;
+                btnDeleteLecturer.Enabled = false;
+                btnUpdateLecturer.Enabled = false;
             }
         }
 
         private void btnAssignLecturer_Click(object sender, EventArgs e)
         {
-            int userId;
-            Int32.TryParse(cmbLecturer.SelectedValue.ToString(), out userId);
-
-            int moduleID;
-
-            Int32.TryParse(cmbModule.SelectedValue.ToString(), out moduleID);
-
-            lecMod.userID = userId;
-            lecMod.moduleID = moduleID;
-            lecMod.date = dtpDate.Value.ToString();
-            lecMod.status = cmbStatus.SelectedItem.ToString();
-
-            int x = bll.AssignLecturerModule(lecMod);
-
-            if (x > 0)
+            if (cmbModule.SelectedItem == null)
             {
-                MessageBox.Show("Successfuly Assigne lecturer");
+                cmbModuleError.SetError(cmbModule, "Please select module before you continue");
+            }
+            else if (cmbLecturer.SelectedItem == null)
+            {
+                cmbLecturerError.SetError(cmbLecturer, "Please select lecturer before you continue");
+            }
+            else if (cmbStatus.SelectedItem == null)
+            {
+                cmbStatusError.SetError(cmbStatus, "Please select lecturer before you continue");
             }
             else
             {
-                MessageBox.Show("Failed to Assign Lecturer");
+
+                int userId;
+                Int32.TryParse(cmbLecturer.SelectedValue.ToString(), out userId);
+
+                int moduleID;
+
+                Int32.TryParse(cmbModule.SelectedValue.ToString(), out moduleID);
+
+                lecMod.userID = userId;
+                lecMod.moduleID = moduleID;
+                lecMod.date = dtpDate.Value.ToString();
+                lecMod.status = cmbStatus.SelectedItem.ToString();
+
+                int x = bll.AssignLecturerModule(lecMod);
+
+                if (x > 0)
+                {
+                    MessageBox.Show("Successfully Assigned lecturer");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to Assign Lecturer");
+                }
             }
         }
 
         private void btnDeleteLecturer_Click(object sender, EventArgs e)
         {
+            lecMod.lecturerModuleID = int.Parse(dataGridView1.SelectedRows[0].Cells["LecturerModuleID"].Value.ToString());
 
+            int x = bll.DeleteLecturerModule(lecMod);
+
+            if (x > 0)
+            {
+                MessageBox.Show("Successfully deleted");
+            }
+            else
+            {
+                MessageBox.Show("Failed to delete");
+            }
+
+            dataGridView1.DataSource = bll.ListAssignedLecturers();
+            btnDeleteLecturer.Enabled = false;
+            btnUpdateLecturer.Enabled = false;
         }
 
         private void btnListLecturer_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = bll.ListAssignedLecturers();
+            btnAssignLecturer.Enabled = true;
+            cmbModule.Enabled = true;
+            btnDeleteLecturer.Enabled = false;
+            btnUpdateLecturer.Enabled = false;
         }
 
         private void ManageLecturerModule_Load(object sender, EventArgs e)
         {
+            btnDeleteLecturer.Enabled = false;
+            btnUpdateLecturer.Enabled = false;
+
             user.Role = "Lecturer";
             cmbModule.DataSource = bll.ListAllModules();
             cmbModule.ValueMember = "ModuleID";
             cmbModule.DisplayMember = "ModuleName";
 
-
+            btnAssignLecturer.Enabled = true;
 
             DataTable dt = new DataTable();
 
@@ -96,7 +159,9 @@ namespace ONT2000_Project
             cmbStatus.Items.Add("In-Active");
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataTable dt = new DataTable();
 
@@ -114,14 +179,20 @@ namespace ONT2000_Project
 
                 dt = bll.GetAssignedLectureByID(lecMod);
                 dt.Columns.Add("FullName", typeof(string), "UserID+'  '+Name+' '+Surname");
-                cmbLecturer.DataSource = dt;
-                cmbLecturer.DisplayMember = dt.Rows[0]["FullName"].ToString();
 
-                cmbModule.DataSource = dt;
-                cmbModule.DisplayMember = dt.Rows[0]["ModuleName"].ToString();
+                cmbLecturer.Text = dt.Rows[0]["FullName"].ToString();
 
-                //cmbStatus.DataSource = dt;
-                cmbStatus.Items.Add(dt.Rows[0]["ModLecturerStatus"].ToString());
+
+
+                cmbModule.Text = dt.Rows[0]["ModuleName"].ToString();
+                cmbModule.Enabled = false;
+
+                cmbStatus.Text = dt.Rows[0]["ModLecturerStatus"].ToString();
+
+                btnAssignLecturer.Enabled = false;
+                btnUpdateLecturer.Enabled = true;
+                btnDeleteLecturer.Enabled = true;
+
             }
         }
     }

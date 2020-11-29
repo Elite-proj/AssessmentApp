@@ -14,16 +14,18 @@ namespace ONT2000_Project
     {
         int getUserID;
         string userType;
-        public LecturerMainForm(int value, string type)
+        string profile;
+        public LecturerMainForm(int value, string type,string names)
         {
             InitializeComponent();
             getUserID = value;
             userType = type;
+            profile = names;
         }
 
         private void LecturerMainForm_Load(object sender, EventArgs e)
         {
-
+            lblProfile.Text = profile;
         }
 
         private void btnListModules_Click(object sender, EventArgs e)
@@ -75,7 +77,9 @@ namespace ONT2000_Project
             currentTabIcon.IconChar = FontAwesome.Sharp.IconChar.Book;
             lblCurrentTab.Text = "Your Modules";
 
-            ListModulesForm list = new ListModulesForm(getUserID, userType);
+            bool back = true;
+
+            ListModulesForm list = new ListModulesForm(getUserID, userType, back);
             list.TopLevel = false;
             list.Dock = DockStyle.Fill;
             childFormPanel.Controls.Add(list);
@@ -115,7 +119,7 @@ namespace ONT2000_Project
             currentTabIcon.IconChar = FontAwesome.Sharp.IconChar.UserGraduate;
             lblCurrentTab.Text = "View Students";
 
-            ListStudentsForm list = new ListStudentsForm();
+            ListStudentsForm list = new ListStudentsForm(getUserID);
             list.TopLevel = false;
             list.Dock = DockStyle.Fill;
             childFormPanel.Controls.Add(list);
@@ -183,5 +187,23 @@ namespace ONT2000_Project
             btnSearchAssessment.ForeColor = Color.White;
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            childFormPanel.Controls.Clear();
+            childFormPanel.Controls.Add(pictureBox2);
+            currentTabIcon.IconChar = FontAwesome.Sharp.IconChar.Home;
+            lblCurrentTab.Text = "Home";
+            ResetCreateAssessment();
+            ResetListModules();
+            ResetListStudents();
+            ResetSearchAssessments();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            PasswordCreationForm pass = new PasswordCreationForm();
+            pass.Show();
+            this.Hide();
+        }
     }
 }

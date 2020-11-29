@@ -12,14 +12,17 @@ namespace ONT2000_Project
 {
     public partial class AdminMainForm : Form
     {
-        public AdminMainForm()
+        string profile;
+        public AdminMainForm(string names)
         {
             InitializeComponent();
+            profile = names;
         }
 
         private void AdminMainForm_Load(object sender, EventArgs e)
         {
-
+            lblProfile.Text = profile;
+            btnManageModuleType.IconChar = FontAwesome.Sharp.IconChar.None;
         }
 
         private void btnSearchModule_Click(object sender, EventArgs e)
@@ -30,6 +33,8 @@ namespace ONT2000_Project
             ResetManageModules();
             ResetEnrollStudent();
             ResetManageUsers();
+            ResetTotalStudents();
+            ResetModuleType();
         }
 
         private void btnSearchUser_Click(object sender, EventArgs e)
@@ -40,6 +45,8 @@ namespace ONT2000_Project
             ResetManageModules();
             ResetEnrollStudent();
             ResetManageUsers();
+            ResetTotalStudents();
+            ResetModuleType();
         }
 
         private void btnManageUsers_Click(object sender, EventArgs e)
@@ -50,6 +57,8 @@ namespace ONT2000_Project
             ResetEnrollStudent();
             ResetSearchModules();
             ResetSearchUsers();
+            ResetTotalStudents();
+            ResetModuleType();
 
             
         }
@@ -62,6 +71,8 @@ namespace ONT2000_Project
             ResetEnrollStudent();
             ResetSearchModules();
             ResetSearchUsers();
+            ResetTotalStudents();
+            ResetModuleType();
         }
 
         private void btnAssignLecturer_Click(object sender, EventArgs e)
@@ -72,6 +83,8 @@ namespace ONT2000_Project
             ResetEnrollStudent();
             ResetSearchModules();
             ResetSearchUsers();
+            ResetTotalStudents();
+            ResetModuleType();
         }
 
         private void btnEnrollStudent_Click(object sender, EventArgs e)
@@ -82,6 +95,8 @@ namespace ONT2000_Project
             ResetAssignLecturer();
             ResetSearchModules();
             ResetSearchUsers();
+            ResetTotalStudents();
+            ResetModuleType();
         }
 
 
@@ -178,6 +193,26 @@ namespace ONT2000_Project
 
         }
 
+        public void ManageModuleTypeClick()
+        {
+            //btnManageModuleType.ImageAlign = ContentAlignment.MiddleRight;
+            //btnManageModuleType.IconColor = Color.FromArgb(0, 0, 64);
+            btnManageModuleType.BackColor = Color.FromArgb(78, 184, 206);
+            btnManageModuleType.FlatAppearance.BorderSize = 3;
+            btnManageModuleType.FlatAppearance.BorderColor = Color.FromArgb(0, 0, 64);
+            btnManageModuleType.ForeColor = Color.FromArgb(0, 0, 64);
+            currentTabIcon.IconChar = FontAwesome.Sharp.IconChar.Cogs;
+            lblCurrentTab.Text = "Assessment Type";
+
+            ManageModuleType modType = new ManageModuleType();
+            modType.TopLevel = false;
+            modType.Dock = DockStyle.Fill;
+            ChildFormPanel.Controls.Add(modType);
+            ChildFormPanel.Tag = modType;
+            modType.BringToFront();
+            modType.Show();
+        }
+
         public void AssignLecturerClick()
         {
             btnAssignLecturer.ImageAlign = ContentAlignment.MiddleRight;
@@ -221,7 +256,38 @@ namespace ONT2000_Project
             manage.Show();
         }
 
+        public void TotalStudentsClicked()
+        {
+            btnModuleStudents.ImageAlign = ContentAlignment.MiddleRight;
+            btnModuleStudents.IconColor = Color.FromArgb(0, 0, 64);
+            btnModuleStudents.BackColor = Color.FromArgb(78, 184, 206);
+            btnModuleStudents.FlatAppearance.BorderSize = 3;
+            btnModuleStudents.FlatAppearance.BorderColor = Color.FromArgb(0, 0, 64);
+            btnModuleStudents.ForeColor = Color.FromArgb(0, 0, 64);
+            currentTabIcon.IconChar = FontAwesome.Sharp.IconChar.UserGraduate;
+            lblCurrentTab.Text = "All Students Enrolled";
+
+            // Display Manage module child form
+
+            ModuleStudentsTotal module = new ModuleStudentsTotal();
+            module.TopLevel = false;
+            module.Dock = DockStyle.Fill;
+            ChildFormPanel.Controls.Add(module);
+            ChildFormPanel.Tag = module;
+            module.BringToFront();
+            module.Show();
+        }
+
         //Reset Buttons methods
+
+        public void ResetTotalStudents()
+        {
+            btnModuleStudents.ImageAlign = ContentAlignment.MiddleLeft;
+            btnModuleStudents.IconColor = Color.White;
+            btnModuleStudents.BackColor = Color.Navy;
+            btnModuleStudents.FlatAppearance.BorderSize = 0;
+            btnModuleStudents.ForeColor = Color.White;
+        }
 
         public void ResetSearchModules()
         {
@@ -278,6 +344,15 @@ namespace ONT2000_Project
             manage.Hide();
         }
 
+        public void ResetModuleType()
+        {
+            btnManageModuleType.ImageAlign = ContentAlignment.MiddleLeft;
+            //btnManageModules.IconColor = Color.White;
+            btnManageModuleType.BackColor = Color.Navy;
+            btnManageModuleType.FlatAppearance.BorderSize = 0;
+            btnManageModuleType.ForeColor = Color.White;
+        }
+
         public void ResetEnrollStudent()
         {
             btnEnrollStudent.ImageAlign = ContentAlignment.MiddleLeft;
@@ -297,6 +372,58 @@ namespace ONT2000_Project
 
         }
 
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            PasswordCreationForm pass = new PasswordCreationForm();
+            pass.Show();
+            this.Hide();
+        }
 
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            ChildFormPanel.Controls.Clear();
+            ChildFormPanel.Controls.Add(pictureBox2);
+            currentTabIcon.IconChar = FontAwesome.Sharp.IconChar.Home;
+            lblCurrentTab.Text = "Home";
+            ResetAssignLecturer();
+            ResetEnrollStudent();
+            ResetManageModules();
+            ResetManageUsers();
+            ResetSearchModules();
+            ResetSearchUsers();
+            ResetTotalStudents();
+            ResetModuleType();
+        }
+
+        private void btnModuleStudents_Click(object sender, EventArgs e)
+        {
+            TotalStudentsClicked();
+
+            ResetAssignLecturer();
+            ResetEnrollStudent();
+            ResetManageModules();
+            ResetManageUsers();
+            ResetSearchModules();
+            ResetSearchUsers();
+            ResetModuleType();
+        }
+
+        private void btnManageModuleType_Click(object sender, EventArgs e)
+        {
+            ManageModuleTypeClick();
+            ResetAssignLecturer();
+            ResetManageUsers();
+            ResetManageModules();
+            ResetEnrollStudent();
+            ResetSearchModules();
+            ResetSearchUsers();
+            ResetTotalStudents();
+        }
     }
 }

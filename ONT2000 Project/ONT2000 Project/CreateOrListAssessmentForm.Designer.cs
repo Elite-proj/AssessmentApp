@@ -78,6 +78,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CreateOrListAssessmentForm";
             this.Text = "CreateOrListAssessmentForm";
+            this.Load += new System.EventHandler(this.CreateOrListAssessmentForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

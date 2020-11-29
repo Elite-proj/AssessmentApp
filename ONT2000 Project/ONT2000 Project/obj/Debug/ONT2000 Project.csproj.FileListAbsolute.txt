@@ -134,3 +134,43 @@ C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Proj
 C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.csproj.CoreCompileInputs.cache
 C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.exe
 C:\Users\Dakalo E. Munonde\Source\Repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.pdb
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\bin\Debug\ONT2000 Project.exe.config
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\bin\Debug\ONT2000 Project.exe
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\bin\Debug\ONT2000 Project.pdb
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\bin\Debug\BLL.dll
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\bin\Debug\DAL.dll
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\bin\Debug\BLL.pdb
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\bin\Debug\DAL.pdb
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.csprojAssemblyReference.cache
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.Administrator.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.AdminMainForm.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.CreateAssessmentsForm.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.CreateOrListAssessmentForm.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.LecturerMainForm.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ListModulesForm.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ListStudentAssessments.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ListStudentsForm.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ManageLecturerModule.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ManageModules.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ManageStudentModules.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ManageUsers.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.Registerform.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.SearchAssessmentForm.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.SearchModules.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.SearchStudentAssessment.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.SearchStudentModule.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.SearchUser.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.SignIn.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.Properties.Resources.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.StudentModuleAssessments.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.StudentsMainForm.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.csproj.GenerateResource.cache
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.csproj.CoreCompileInputs.cache
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.csproj.CopyComplete
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.exe
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000 Project.pdb
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ModuleStudentsTotal.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.WelcomeForm.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.PasswordCreationForm.resources
+C:\Users\ELITE\source\repos\ONT Project\ONT2000 Project\ONT2000 Project\obj\Debug\ONT2000_Project.ManageModuleType.resources

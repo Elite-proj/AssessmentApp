@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
-using DATAACCESSLAYER;
+using DAL;
 
 namespace ONT2000_Project
 {
@@ -27,6 +27,7 @@ namespace ONT2000_Project
         private void ListStudentAssessments_Load(object sender, EventArgs e)
         {
             user.UserID = userID;
+            dgvDisplayAssessments.ForeColor = Color.Black;
             dgvDisplayAssessments.DataSource = bll.ListAllStudentAssessments(user);
         }
     }

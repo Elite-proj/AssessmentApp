@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.emailPanel = new System.Windows.Forms.Panel();
             this.passwordPanel = new System.Windows.Forms.Panel();
@@ -39,9 +40,13 @@
             this.passwordIcon = new FontAwesome.Sharp.IconPictureBox();
             this.userIcon = new FontAwesome.Sharp.IconPictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.emailError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.passwordError = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.passwordIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordError)).BeginInit();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -80,7 +85,7 @@
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.SystemColors.Window;
-            this.txtPassword.Location = new System.Drawing.Point(219, 478);
+            this.txtPassword.Location = new System.Drawing.Point(219, 471);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(390, 37);
             this.txtPassword.TabIndex = 5;
@@ -100,10 +105,10 @@
             this.btnRegister.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegister.IconSize = 48;
             this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegister.Location = new System.Drawing.Point(159, 645);
+            this.btnRegister.Location = new System.Drawing.Point(159, 666);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Rotation = 0D;
-            this.btnRegister.Size = new System.Drawing.Size(450, 49);
+            this.btnRegister.Size = new System.Drawing.Size(450, 77);
             this.btnRegister.TabIndex = 12;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = false;
@@ -121,10 +126,10 @@
             this.btnSignIn.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSignIn.IconSize = 48;
             this.btnSignIn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSignIn.Location = new System.Drawing.Point(159, 568);
+            this.btnSignIn.Location = new System.Drawing.Point(159, 571);
             this.btnSignIn.Name = "btnSignIn";
             this.btnSignIn.Rotation = 0D;
-            this.btnSignIn.Size = new System.Drawing.Size(450, 49);
+            this.btnSignIn.Size = new System.Drawing.Size(450, 73);
             this.btnSignIn.TabIndex = 11;
             this.btnSignIn.Text = "Sign In";
             this.btnSignIn.UseVisualStyleBackColor = false;
@@ -207,6 +212,14 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // emailError
+            // 
+            this.emailError.ContainerControl = this;
+            // 
+            // passwordError
+            // 
+            this.passwordError.ContainerControl = this;
+            // 
             // SignIn
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -232,6 +245,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.passwordIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,6 +265,8 @@
         private FontAwesome.Sharp.IconButton btnCloseIcon;
         private FontAwesome.Sharp.IconButton btnSignIn;
         private FontAwesome.Sharp.IconButton btnRegister;
+        private System.Windows.Forms.ErrorProvider emailError;
+        private System.Windows.Forms.ErrorProvider passwordError;
     }
 }
 

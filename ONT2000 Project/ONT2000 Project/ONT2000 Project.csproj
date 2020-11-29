@@ -34,6 +34,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BLL">
+      <HintPath>..\BLL\bin\Debug\BLL.dll</HintPath>
+    </Reference>
+    <Reference Include="DAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\BLL\bin\Debug\DAL.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -107,6 +114,12 @@
     <Compile Include="ManageModules.Designer.cs">
       <DependentUpon>ManageModules.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageModuleType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageModuleType.Designer.cs">
+      <DependentUpon>ManageModuleType.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageStudentModules.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +131,18 @@
     </Compile>
     <Compile Include="ManageUsers.Designer.cs">
       <DependentUpon>ManageUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleStudentsTotal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModuleStudentsTotal.Designer.cs">
+      <DependentUpon>ModuleStudentsTotal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PasswordCreationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PasswordCreationForm.Designer.cs">
+      <DependentUpon>PasswordCreationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SearchAssessmentForm.cs">
       <SubType>Form</SubType>
@@ -175,6 +200,12 @@
     <Compile Include="StudentsMainForm.Designer.cs">
       <DependentUpon>StudentsMainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WelcomeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WelcomeForm.Designer.cs">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Administrator.resx">
       <DependentUpon>Administrator.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,11 +236,20 @@
     <EmbeddedResource Include="ManageModules.resx">
       <DependentUpon>ManageModules.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManageModuleType.resx">
+      <DependentUpon>ManageModuleType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageStudentModules.resx">
       <DependentUpon>ManageStudentModules.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManageUsers.resx">
       <DependentUpon>ManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModuleStudentsTotal.resx">
+      <DependentUpon>ModuleStudentsTotal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordCreationForm.resx">
+      <DependentUpon>PasswordCreationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registerform.resx">
       <DependentUpon>Registerform.cs</DependentUpon>
@@ -248,6 +288,9 @@
     <EmbeddedResource Include="StudentsMainForm.resx">
       <DependentUpon>StudentsMainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WelcomeForm.resx">
+      <DependentUpon>WelcomeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -279,10 +322,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{7b6a1de2-be91-460b-acdf-5b513f383772}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
+    <None Include="Resources\nmu logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
