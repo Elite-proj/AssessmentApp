@@ -31,6 +31,8 @@ namespace ONT2000_Project
             dtpDate.Visible = false;
             lblDisplayAssessmentType.Text = "";
             lblDisplayDueDate.Text = "";
+
+            dgvDisplayAssessment.ForeColor = Color.Black;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

@@ -25,7 +25,7 @@ namespace ONT2000_Project
         User user = new User();
         private void AssessmentBetweenDates_Load(object sender, EventArgs e)
         {
-
+            dgvDisplay.ForeColor = Color.Black;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

@@ -35,16 +35,12 @@ namespace ONT2000_Project
             {
                 moduleNameError.SetError(txtModule, "Do not leave this field empty");
             }
-            else if (cmbStatus.SelectedItem == null)
-            {
-                StatusError.SetError(cmbStatus, "Select status before you continue");
-            }
             else
             {
                 assess.decription = txtAssessmentType.Text;
                 assess.DueDate = dtpDueDate.Value.ToString();
                 assess.assessmentID = int.Parse(dgvDisplayAssessment.SelectedRows[0].Cells["AssessmentID"].Value.ToString());
-                assess.AssessmentStatus = cmbStatus.SelectedItem.ToString();
+                assess.AssessmentStatus = "Active";
 
 
                 int x = bll.UpdateAssessment(assess);
@@ -155,8 +151,6 @@ namespace ONT2000_Project
 
         private void SearchAssessmentForm_Load(object sender, EventArgs e)
         {
-            cmbStatus.Items.Add("Active");
-            cmbStatus.Items.Add("In-Active");
 
             rdbNameSearch.Checked = true;
 

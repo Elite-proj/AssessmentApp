@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnBetweenDates = new FontAwesome.Sharp.IconButton();
             this.btnLogOut = new FontAwesome.Sharp.IconButton();
             this.btnListAssessments = new FontAwesome.Sharp.IconButton();
             this.btnSearchAssessments = new FontAwesome.Sharp.IconButton();
@@ -43,7 +44,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.childFormPanel = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnBetweenDates = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -67,6 +67,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(332, 742);
             this.panel1.TabIndex = 0;
+            // 
+            // btnBetweenDates
+            // 
+            this.btnBetweenDates.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnBetweenDates.FlatAppearance.BorderSize = 0;
+            this.btnBetweenDates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBetweenDates.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBetweenDates.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBetweenDates.IconChar = FontAwesome.Sharp.IconChar.CalendarAlt;
+            this.btnBetweenDates.IconColor = System.Drawing.Color.White;
+            this.btnBetweenDates.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBetweenDates.IconSize = 38;
+            this.btnBetweenDates.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBetweenDates.Location = new System.Drawing.Point(0, 532);
+            this.btnBetweenDates.Name = "btnBetweenDates";
+            this.btnBetweenDates.Rotation = 0D;
+            this.btnBetweenDates.Size = new System.Drawing.Size(332, 87);
+            this.btnBetweenDates.TabIndex = 12;
+            this.btnBetweenDates.Text = "Assessments by dates";
+            this.btnBetweenDates.UseVisualStyleBackColor = true;
+            this.btnBetweenDates.Click += new System.EventHandler(this.btnBetweenDates_Click);
             // 
             // btnLogOut
             // 
@@ -270,27 +291,6 @@
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
-            // 
-            // btnBetweenDates
-            // 
-            this.btnBetweenDates.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBetweenDates.FlatAppearance.BorderSize = 0;
-            this.btnBetweenDates.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBetweenDates.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnBetweenDates.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBetweenDates.IconChar = FontAwesome.Sharp.IconChar.CalendarAlt;
-            this.btnBetweenDates.IconColor = System.Drawing.Color.White;
-            this.btnBetweenDates.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBetweenDates.IconSize = 38;
-            this.btnBetweenDates.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBetweenDates.Location = new System.Drawing.Point(0, 532);
-            this.btnBetweenDates.Name = "btnBetweenDates";
-            this.btnBetweenDates.Rotation = 0D;
-            this.btnBetweenDates.Size = new System.Drawing.Size(332, 87);
-            this.btnBetweenDates.TabIndex = 12;
-            this.btnBetweenDates.Text = "Assessments by dates";
-            this.btnBetweenDates.UseVisualStyleBackColor = true;
-            this.btnBetweenDates.Click += new System.EventHandler(this.btnBetweenDates_Click);
             // 
             // StudentsMainForm
             // 

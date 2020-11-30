@@ -32,10 +32,6 @@ namespace ONT2000_Project
             {
                 cmbLecturerError.SetError(cmbLecturer, "Please select lecturer before you continue");
             }
-            else if (cmbStatus.SelectedItem == null)
-            {
-                cmbStatusError.SetError(cmbStatus, "Please select lecturer before you continue");
-            }
             else
             {
 
@@ -43,7 +39,7 @@ namespace ONT2000_Project
                 lecMod.userID = int.Parse(cmbLecturer.SelectedValue.ToString());
 
                 lecMod.date = dtpDate.Value.ToString();
-                lecMod.status = cmbStatus.SelectedItem.ToString();
+                lecMod.status = "Active";
 
                 int x = bll.UpdateLecturerModule(lecMod);
 
@@ -73,10 +69,7 @@ namespace ONT2000_Project
             else if (cmbLecturer.SelectedItem == null)
             {
                 cmbLecturerError.SetError(cmbLecturer, "Please select lecturer before you continue");
-            }
-            else if (cmbStatus.SelectedItem == null)
-            {
-                cmbStatusError.SetError(cmbStatus, "Please select lecturer before you continue");
+            
             }
             else
             {
@@ -91,7 +84,7 @@ namespace ONT2000_Project
                 lecMod.userID = userId;
                 lecMod.moduleID = moduleID;
                 lecMod.date = dtpDate.Value.ToString();
-                lecMod.status = cmbStatus.SelectedItem.ToString();
+                lecMod.status = "Active";
 
                 int x = bll.AssignLecturerModule(lecMod);
 
@@ -155,8 +148,7 @@ namespace ONT2000_Project
             cmbLecturer.ValueMember = "UserID";
             cmbLecturer.DisplayMember = "FullName";
 
-            cmbStatus.Items.Add("Active");
-            cmbStatus.Items.Add("In-Active");
+           
         }
 
         
@@ -187,7 +179,7 @@ namespace ONT2000_Project
                 cmbModule.Text = dt.Rows[0]["ModuleName"].ToString();
                 cmbModule.Enabled = false;
 
-                cmbStatus.Text = dt.Rows[0]["ModLecturerStatus"].ToString();
+                
 
                 btnAssignLecturer.Enabled = false;
                 btnUpdateLecturer.Enabled = true;

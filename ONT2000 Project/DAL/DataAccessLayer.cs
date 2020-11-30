@@ -171,17 +171,20 @@ namespace DAL
             {
 
             }
-
             dbComm = new SqlCommand("sp_DeleteModule", dbConn);
             dbComm.CommandType = CommandType.StoredProcedure;
 
             dbComm.Parameters.AddWithValue("@ModuleID", mod.moduleID);
+
 
             int x = dbComm.ExecuteNonQuery();
 
             dbConn.Close();
 
             return x;
+
+         
+
         }
 
         public DataTable GetUserByID(User user)

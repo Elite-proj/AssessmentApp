@@ -32,10 +32,6 @@ namespace ONT2000_Project
             {
                 studentError.SetError(cmbStudent, "Please select student first");
             }
-            else if (cmbStatus.SelectedItem == null)
-            {
-                statusError.SetError(cmbStatus, "Please select status first");
-            }
             else
             {
 
@@ -43,7 +39,7 @@ namespace ONT2000_Project
                 studMod.lecturerModuleID = int.Parse(cmbModule.SelectedValue.ToString());
                 studMod.userID = int.Parse(cmbStudent.SelectedValue.ToString());
                 studMod.date = dtpDate.Value.ToString();
-                studMod.status = cmbStatus.SelectedItem.ToString();
+                studMod.status = "Active";
 
                 int x = bll.EnrolStudentToModule(studMod);
 
@@ -74,10 +70,6 @@ namespace ONT2000_Project
             {
                 studentError.SetError(cmbStudent, "Please select student first");
             }
-            else if (cmbStatus.SelectedItem == null)
-            {
-                statusError.SetError(cmbStatus, "Please select status first");
-            }
             else
             {
 
@@ -85,7 +77,7 @@ namespace ONT2000_Project
 
                 StudentModule studMod = new StudentModule();
 
-                studMod.status = cmbStatus.SelectedItem.ToString();
+                studMod.status = "Active";
                 studMod.studentModuleID = int.Parse(dgvDisplayStudent.SelectedRows[0].Cells["StudentModuleID"].Value.ToString());
 
                 int x = bll.UpdateStudentModule(studMod);
@@ -187,8 +179,7 @@ namespace ONT2000_Project
             cmbModule.ValueMember = "LecturerModuleID";
             cmbModule.DisplayMember = "ModuleName";
 
-            cmbStatus.Items.Add("Active");
-            cmbStatus.Items.Add("In-Active");
+            
         }
 
         private void dgvDisplayStudent_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -200,7 +191,7 @@ namespace ONT2000_Project
 
                 cmbModule.Text = dgvDisplayStudent.SelectedRows[0].Cells["ModuleName"].Value.ToString();
                 cmbStudent.Text = dgvDisplayStudent.SelectedRows[0].Cells["UserID"].Value.ToString() + " " + dgvDisplayStudent.SelectedRows[0].Cells["Name"].Value.ToString() + " " + dgvDisplayStudent.SelectedRows[0].Cells["Surname"].Value.ToString();
-                cmbStatus.Text = dgvDisplayStudent.SelectedRows[0].Cells["StudModStatus"].Value.ToString();
+                
 
                 cmbModule.Enabled = false;
                 cmbStudent.Enabled = false;

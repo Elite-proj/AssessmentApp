@@ -32,8 +32,6 @@
             this.dgvDisplayAssessment = new System.Windows.Forms.DataGridView();
             this.lblDueDate = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnDeleteAssessment = new FontAwesome.Sharp.IconButton();
             this.btnUpdateAssessment = new FontAwesome.Sharp.IconButton();
             this.dtpDueDate = new System.Windows.Forms.DateTimePicker();
@@ -96,31 +94,6 @@
             this.label5.Size = new System.Drawing.Size(146, 32);
             this.label5.TabIndex = 55;
             this.label5.Text = "New Date:";
-            // 
-            // cmbStatus
-            // 
-            this.cmbStatus.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.cmbStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.cmbStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cmbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbStatus.ForeColor = System.Drawing.Color.White;
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.Location = new System.Drawing.Point(536, 465);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(379, 45);
-            this.cmbStatus.TabIndex = 54;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(435, 471);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 32);
-            this.label2.TabIndex = 53;
-            this.label2.Text = "Status:";
             // 
             // btnDeleteAssessment
             // 
@@ -347,8 +320,6 @@
             this.Controls.Add(this.lblFilter);
             this.Controls.Add(this.lblDueDate);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.cmbStatus);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnDeleteAssessment);
             this.Controls.Add(this.btnUpdateAssessment);
             this.Controls.Add(this.dtpDueDate);
@@ -375,8 +346,6 @@
         private System.Windows.Forms.DataGridView dgvDisplayAssessment;
         private System.Windows.Forms.Label lblDueDate;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox cmbStatus;
-        private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconButton btnDeleteAssessment;
         private FontAwesome.Sharp.IconButton btnUpdateAssessment;
         private System.Windows.Forms.DateTimePicker dtpDueDate;
