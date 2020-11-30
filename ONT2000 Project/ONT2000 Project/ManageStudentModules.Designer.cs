@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,7 +44,15 @@
             this.btnDeleteStudent = new FontAwesome.Sharp.IconButton();
             this.btnUpdateStudent = new FontAwesome.Sharp.IconButton();
             this.btnAddStudent = new FontAwesome.Sharp.IconButton();
+            this.moduleError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.studentError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.dateError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.statusError = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayStudent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusError)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -166,6 +175,7 @@
             this.dgvDisplayStudent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDisplayStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDisplayStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisplayStudent.Location = new System.Drawing.Point(1, 342);
             this.dgvDisplayStudent.Name = "dgvDisplayStudent";
@@ -260,6 +270,22 @@
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
+            // moduleError
+            // 
+            this.moduleError.ContainerControl = this;
+            // 
+            // studentError
+            // 
+            this.studentError.ContainerControl = this;
+            // 
+            // dateError
+            // 
+            this.dateError.ContainerControl = this;
+            // 
+            // statusError
+            // 
+            this.statusError.ContainerControl = this;
+            // 
             // ManageStudentModules
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -285,6 +311,10 @@
             this.Text = "ManageStudentModules";
             this.Load += new System.EventHandler(this.ManageStudentModules_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayStudent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.moduleError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statusError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,5 +337,9 @@
         private FontAwesome.Sharp.IconButton btnDeleteStudent;
         private FontAwesome.Sharp.IconButton btnListStudents;
         private System.Windows.Forms.DataGridView dgvDisplayStudent;
+        private System.Windows.Forms.ErrorProvider moduleError;
+        private System.Windows.Forms.ErrorProvider studentError;
+        private System.Windows.Forms.ErrorProvider dateError;
+        private System.Windows.Forms.ErrorProvider statusError;
     }
 }

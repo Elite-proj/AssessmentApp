@@ -32,7 +32,6 @@
             this.dgvDisplay = new System.Windows.Forms.DataGridView();
             this.btnDeleteModule = new FontAwesome.Sharp.IconButton();
             this.btnUpdate = new FontAwesome.Sharp.IconButton();
-            this.txtDuration = new System.Windows.Forms.TextBox();
             this.txtModuleName = new System.Windows.Forms.TextBox();
             this.cmbModuleType = new System.Windows.Forms.ComboBox();
             this.lblCode = new System.Windows.Forms.Label();
@@ -46,6 +45,8 @@
             this.txtDurationError = new System.Windows.Forms.ErrorProvider(this.components);
             this.cmbTypeError = new System.Windows.Forms.ErrorProvider(this.components);
             this.searchError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmbDuration = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtModuleError)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDurationError)).BeginInit();
@@ -55,8 +56,10 @@
             // 
             // dgvDisplay
             // 
-            this.dgvDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDisplay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisplay.Location = new System.Drawing.Point(12, 188);
             this.dgvDisplay.Name = "dgvDisplay";
@@ -90,7 +93,7 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnUpdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
@@ -109,22 +112,13 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
             // 
-            // txtDuration
-            // 
-            this.txtDuration.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.txtDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDuration.Location = new System.Drawing.Point(639, 292);
-            this.txtDuration.Name = "txtDuration";
-            this.txtDuration.Size = new System.Drawing.Size(312, 48);
-            this.txtDuration.TabIndex = 38;
-            // 
             // txtModuleName
             // 
             this.txtModuleName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.txtModuleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModuleName.Location = new System.Drawing.Point(693, 229);
             this.txtModuleName.Name = "txtModuleName";
-            this.txtModuleName.Size = new System.Drawing.Size(250, 48);
+            this.txtModuleName.Size = new System.Drawing.Size(258, 48);
             this.txtModuleName.TabIndex = 37;
             // 
             // cmbModuleType
@@ -132,10 +126,11 @@
             this.cmbModuleType.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.cmbModuleType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbModuleType.FormattingEnabled = true;
-            this.cmbModuleType.Location = new System.Drawing.Point(693, 371);
+            this.cmbModuleType.Location = new System.Drawing.Point(693, 297);
             this.cmbModuleType.Name = "cmbModuleType";
             this.cmbModuleType.Size = new System.Drawing.Size(258, 37);
             this.cmbModuleType.TabIndex = 36;
+            this.cmbModuleType.SelectedIndexChanged += new System.EventHandler(this.cmbModuleType_SelectedIndexChanged);
             // 
             // lblCode
             // 
@@ -155,7 +150,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(526, 374);
+            this.label5.Location = new System.Drawing.Point(526, 300);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(161, 29);
             this.label5.TabIndex = 34;
@@ -167,7 +162,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(526, 311);
+            this.label4.Location = new System.Drawing.Point(526, 354);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 29);
             this.label4.TabIndex = 33;
@@ -199,7 +194,6 @@
             // 
             // btnSearch
             // 
-            this.btnSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnSearch.ForeColor = System.Drawing.Color.White;
@@ -208,7 +202,7 @@
             this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSearch.IconSize = 35;
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSearch.Location = new System.Drawing.Point(308, 46);
+            this.btnSearch.Location = new System.Drawing.Point(291, 46);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Rotation = 0D;
             this.btnSearch.Size = new System.Drawing.Size(155, 44);
@@ -243,16 +237,38 @@
             // 
             this.searchError.ContainerControl = this;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gold;
+            this.label1.Location = new System.Drawing.Point(12, 135);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(443, 29);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Select record below to update or delete.";
+            // 
+            // cmbDuration
+            // 
+            this.cmbDuration.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.cmbDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDuration.FormattingEnabled = true;
+            this.cmbDuration.Location = new System.Drawing.Point(634, 351);
+            this.cmbDuration.Name = "cmbDuration";
+            this.cmbDuration.Size = new System.Drawing.Size(317, 37);
+            this.cmbDuration.TabIndex = 44;
+            // 
             // SearchModules
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(991, 578);
+            this.Controls.Add(this.cmbDuration);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtModuleNameSearch);
             this.Controls.Add(this.btnDeleteModule);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.txtDuration);
             this.Controls.Add(this.txtModuleName);
             this.Controls.Add(this.cmbModuleType);
             this.Controls.Add(this.lblCode);
@@ -280,7 +296,6 @@
         private System.Windows.Forms.DataGridView dgvDisplay;
         private FontAwesome.Sharp.IconButton btnDeleteModule;
         private FontAwesome.Sharp.IconButton btnUpdate;
-        private System.Windows.Forms.TextBox txtDuration;
         private System.Windows.Forms.TextBox txtModuleName;
         private System.Windows.Forms.ComboBox cmbModuleType;
         private System.Windows.Forms.Label lblCode;
@@ -294,5 +309,7 @@
         private System.Windows.Forms.ErrorProvider txtDurationError;
         private System.Windows.Forms.ErrorProvider cmbTypeError;
         private System.Windows.Forms.ErrorProvider searchError;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmbDuration;
     }
 }

@@ -61,6 +61,7 @@
             this.roleError = new System.Windows.Forms.ErrorProvider(this.components);
             this.emailError = new System.Windows.Forms.ErrorProvider(this.components);
             this.statusError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNameError)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSurnameError)).BeginInit();
@@ -72,14 +73,16 @@
             // 
             // dgvDisplayUser
             // 
-            this.dgvDisplayUser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvDisplayUser.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDisplayUser.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDisplayUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDisplayUser.Location = new System.Drawing.Point(12, 181);
+            this.dgvDisplayUser.Location = new System.Drawing.Point(12, 200);
             this.dgvDisplayUser.Name = "dgvDisplayUser";
             this.dgvDisplayUser.RowHeadersWidth = 62;
             this.dgvDisplayUser.RowTemplate.Height = 28;
-            this.dgvDisplayUser.Size = new System.Drawing.Size(439, 585);
+            this.dgvDisplayUser.Size = new System.Drawing.Size(439, 566);
             this.dgvDisplayUser.TabIndex = 13;
             this.dgvDisplayUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDisplayUser_CellClick);
             // 
@@ -135,7 +138,7 @@
             // 
             // btnDeleteUser
             // 
-            this.btnDeleteUser.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnDeleteUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteUser.BackColor = System.Drawing.Color.Red;
             this.btnDeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteUser.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -157,7 +160,7 @@
             // 
             // btnUpdateUser
             // 
-            this.btnUpdateUser.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnUpdateUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdateUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateUser.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnUpdateUser.ForeColor = System.Drawing.Color.White;
@@ -410,11 +413,23 @@
             // 
             this.statusError.ContainerControl = this;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gold;
+            this.label1.Location = new System.Drawing.Point(8, 156);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(443, 29);
+            this.label1.TabIndex = 64;
+            this.label1.Text = "Select record below to update or delete.";
+            // 
             // SearchUser
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1076, 774);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblSurname);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.label3);
@@ -492,5 +507,6 @@
         private System.Windows.Forms.ErrorProvider roleError;
         private System.Windows.Forms.ErrorProvider emailError;
         private System.Windows.Forms.ErrorProvider statusError;
+        private System.Windows.Forms.Label label1;
     }
 }

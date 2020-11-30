@@ -72,5 +72,34 @@ namespace ONT2000_Project
             ListModulesForm list = new ListModulesForm(getID, type, back);
             this.Close();
         }
+
+        private void dgvDisplayAssessment_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            Assessment assess = new Assessment();
+            DataTable dt = new DataTable();
+            try
+            {
+                assess.assessmentID = int.Parse(dgvDisplayAssessment.SelectedRows[0].Cells["AssessmentID"].Value.ToString());
+
+
+                dt = bll.GetAssessmentByID(assess);
+            }
+            catch
+            {
+            }
+
+            try
+            {
+
+                if (dgvDisplayAssessment.SelectedRows.Count > 0)
+                {
+                    lblDisplayAssessmentType.Text = dt.Rows[0]["AssessmentDescription"].ToString();
+                    lblDisplayDueDate.Text = dt.Rows[0]["DueDate"].ToString();
+                }
+            }
+            catch (IndexOutOfRangeException)
+            { 
+            }
+        }
     }
 }

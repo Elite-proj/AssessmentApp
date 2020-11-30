@@ -24,20 +24,37 @@ namespace ONT2000_Project
         {
             StudentModule studMod = new StudentModule();
 
-            studMod.lecturerModuleID = int.Parse(cmbModule.SelectedValue.ToString());
-            studMod.userID = int.Parse(cmbStudent.SelectedValue.ToString());
-            studMod.date = dtpDate.Value.ToString();
-            studMod.status = cmbStatus.SelectedItem.ToString();
-
-            int x = bll.EnrolStudentToModule(studMod);
-
-            if (x > 0)
+            if (cmbModule.SelectedItem == null)
             {
-                MessageBox.Show("Successfully Enrolled Student");
+                moduleError.SetError(cmbModule, "Please select module first");
+            }
+            else if (cmbStudent.SelectedItem == null)
+            {
+                studentError.SetError(cmbStudent, "Please select student first");
+            }
+            else if (cmbStatus.SelectedItem == null)
+            {
+                statusError.SetError(cmbStatus, "Please select status first");
             }
             else
             {
-                MessageBox.Show("Failed to enroll student");
+
+
+                studMod.lecturerModuleID = int.Parse(cmbModule.SelectedValue.ToString());
+                studMod.userID = int.Parse(cmbStudent.SelectedValue.ToString());
+                studMod.date = dtpDate.Value.ToString();
+                studMod.status = cmbStatus.SelectedItem.ToString();
+
+                int x = bll.EnrolStudentToModule(studMod);
+
+                if (x > 0)
+                {
+                    MessageBox.Show("Successfully Enrolled Student");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to enroll student");
+                }
             }
         }
 
@@ -49,31 +66,50 @@ namespace ONT2000_Project
             cmbStudent.Enabled = true;
             dtpDate.Enabled = true;
 
-            btnAddStudent.Enabled = true;
-
-            StudentModule studMod = new StudentModule();
-
-            studMod.status = cmbStatus.SelectedItem.ToString();
-            studMod.studentModuleID = int.Parse(dgvDisplayStudent.SelectedRows[0].Cells["StudentModuleID"].Value.ToString());
-
-            int x = bll.UpdateStudentModule(studMod);
-
-            if (x > 0)
+            if (cmbModule.SelectedItem == null)
             {
-                MessageBox.Show("Successfully updated");
+                moduleError.SetError(cmbModule, "Please select module first");
+            }
+            else if (cmbStudent.SelectedItem == null)
+            {
+                studentError.SetError(cmbStudent, "Please select student first");
+            }
+            else if (cmbStatus.SelectedItem == null)
+            {
+                statusError.SetError(cmbStatus, "Please select status first");
             }
             else
             {
-                MessageBox.Show("Failed to update");
+
+                btnAddStudent.Enabled = true;
+
+                StudentModule studMod = new StudentModule();
+
+                studMod.status = cmbStatus.SelectedItem.ToString();
+                studMod.studentModuleID = int.Parse(dgvDisplayStudent.SelectedRows[0].Cells["StudentModuleID"].Value.ToString());
+
+                int x = bll.UpdateStudentModule(studMod);
+
+                if (x > 0)
+                {
+                    MessageBox.Show("Successfully updated");
+                }
+                else
+                {
+                    MessageBox.Show("Failed to update");
+                }
+
+                DataTable dt = new DataTable();
+
+                dt = bll.ListStudentModule();
+
+                dgvDisplayStudent.DataSource = dt;
+
+                btnDeleteStudent.Enabled = false;
+                btnUpdateStudent.Enabled = false;
+                btnAddStudent.Enabled = true;
+
             }
-
-            DataTable dt = new DataTable();
-
-            dt = bll.ListStudentModule();
-
-            dgvDisplayStudent.DataSource = dt;
-
-
         }
 
         private void btnDeleteStudent_Click(object sender, EventArgs e)
@@ -105,6 +141,7 @@ namespace ONT2000_Project
 
             btnUpdateStudent.Enabled = false;
             btnDeleteStudent.Enabled = false;
+            btnAddStudent.Enabled = true;
         }
 
         private void btnListStudents_Click(object sender, EventArgs e)
@@ -139,7 +176,7 @@ namespace ONT2000_Project
             User user = new User();
             user.Role = "Student";
             DataTable dt = new DataTable();
-            dt = bll.ListAllStudents(user);
+            dt = bll.ListAllLecturers(user);
 
             dt.Columns.Add("FullName", typeof(string), "UserID+' '+Name+' '+Surname");
             cmbStudent.DataSource = dt;

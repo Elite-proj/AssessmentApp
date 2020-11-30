@@ -34,6 +34,12 @@ namespace ONT2000_Project
             cmbModule.DataSource = dt;
             cmbModule.ValueMember = "ModuleID";
             cmbModule.DisplayMember = "ModuleName";
+
+            lblStudentID.Text = "";
+            lblStudentName.Text = "";
+            lblStudentAssessment.Text = "";
+            lblStudentSurname.Text = "";
+            lblDisplayStatus.Text = "";
         }
 
         private void cmbModule_SelectedIndexChanged(object sender, EventArgs e)
@@ -52,6 +58,12 @@ namespace ONT2000_Project
             cmbAssessment.DataSource = dt;
             cmbAssessment.ValueMember = "AssessmentID";
             cmbAssessment.DisplayMember = "AssessmentDescription";
+
+            lblStudentID.Text = "";
+            lblStudentName.Text = "";
+            lblStudentAssessment.Text = "";
+            lblStudentSurname.Text = "";
+            lblDisplayStatus.Text = "";
         }
 
         private void cmbAssessment_SelectedIndexChanged(object sender, EventArgs e)
@@ -66,6 +78,12 @@ namespace ONT2000_Project
 
 
             dgvDisplayStudents.DataSource = bll.ListStudentAssessment(assess);
+
+            lblStudentID.Text = "";
+            lblStudentName.Text = "";
+            lblStudentAssessment.Text = "";
+            lblStudentSurname.Text = "";
+            lblDisplayStatus.Text = "";
         }
 
         private void dgvDisplayStudents_CellClick(object sender, DataGridViewCellEventArgs e)

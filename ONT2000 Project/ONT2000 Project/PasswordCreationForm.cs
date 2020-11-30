@@ -169,6 +169,10 @@ namespace ONT2000_Project
             {
                 MessageBox.Show("Password successful. Now re-verify your email");
                 txtPassword.Visible = false;
+                passwordIcon.Visible = false;
+                passwordPanel.Visible = false;
+                btnContinue.Visible = false;
+                btnCheckEmail.Visible = true;
             }
             else
             {

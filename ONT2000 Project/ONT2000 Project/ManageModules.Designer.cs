@@ -30,12 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtModuleName = new System.Windows.Forms.TextBox();
-            this.txtDuration = new System.Windows.Forms.TextBox();
             this.namePanel = new System.Windows.Forms.Panel();
-            this.durationPanel = new System.Windows.Forms.Panel();
             this.TypePanel = new System.Windows.Forms.Panel();
             this.cmbType = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -48,6 +45,9 @@
             this.ModuleNameError = new System.Windows.Forms.ErrorProvider(this.components);
             this.durationError = new System.Windows.Forms.ErrorProvider(this.components);
             this.cmbError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.cmbDuration = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayModules)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ModuleNameError)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.durationError)).BeginInit();
@@ -56,6 +56,8 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
@@ -65,23 +67,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Module Name:";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(97, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 29);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Duration:";
-            // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(97, 161);
+            this.label3.Location = new System.Drawing.Point(98, 102);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 29);
             this.label3.TabIndex = 2;
@@ -94,22 +87,10 @@
             this.txtModuleName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.txtModuleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtModuleName.ForeColor = System.Drawing.Color.White;
-            this.txtModuleName.Location = new System.Drawing.Point(275, 26);
+            this.txtModuleName.Location = new System.Drawing.Point(269, 41);
             this.txtModuleName.Name = "txtModuleName";
-            this.txtModuleName.Size = new System.Drawing.Size(643, 35);
+            this.txtModuleName.Size = new System.Drawing.Size(649, 35);
             this.txtModuleName.TabIndex = 4;
-            // 
-            // txtDuration
-            // 
-            this.txtDuration.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDuration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.txtDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDuration.ForeColor = System.Drawing.Color.White;
-            this.txtDuration.Location = new System.Drawing.Point(239, 96);
-            this.txtDuration.Name = "txtDuration";
-            this.txtDuration.Size = new System.Drawing.Size(685, 35);
-            this.txtDuration.TabIndex = 5;
             // 
             // namePanel
             // 
@@ -117,21 +98,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.namePanel.BackColor = System.Drawing.Color.White;
             this.namePanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.namePanel.Location = new System.Drawing.Point(275, 67);
+            this.namePanel.Location = new System.Drawing.Point(269, 82);
             this.namePanel.Name = "namePanel";
-            this.namePanel.Size = new System.Drawing.Size(643, 1);
+            this.namePanel.Size = new System.Drawing.Size(649, 1);
             this.namePanel.TabIndex = 6;
-            // 
-            // durationPanel
-            // 
-            this.durationPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.durationPanel.BackColor = System.Drawing.Color.White;
-            this.durationPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.durationPanel.Location = new System.Drawing.Point(238, 136);
-            this.durationPanel.Name = "durationPanel";
-            this.durationPanel.Size = new System.Drawing.Size(685, 1);
-            this.durationPanel.TabIndex = 7;
             // 
             // TypePanel
             // 
@@ -139,7 +109,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TypePanel.BackColor = System.Drawing.Color.White;
             this.TypePanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TypePanel.Location = new System.Drawing.Point(261, 193);
+            this.TypePanel.Location = new System.Drawing.Point(254, 145);
             this.TypePanel.Name = "TypePanel";
             this.TypePanel.Size = new System.Drawing.Size(664, 1);
             this.TypePanel.TabIndex = 8;
@@ -153,10 +123,11 @@
             this.cmbType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbType.ForeColor = System.Drawing.Color.White;
             this.cmbType.FormattingEnabled = true;
-            this.cmbType.Location = new System.Drawing.Point(275, 153);
+            this.cmbType.Location = new System.Drawing.Point(269, 102);
             this.cmbType.Name = "cmbType";
             this.cmbType.Size = new System.Drawing.Size(649, 37);
             this.cmbType.TabIndex = 9;
+            this.cmbType.SelectedIndexChanged += new System.EventHandler(this.cmbType_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -183,6 +154,7 @@
             this.dgvDisplayModules.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDisplayModules.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDisplayModules.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisplayModules.Location = new System.Drawing.Point(0, 349);
             this.dgvDisplayModules.Name = "dgvDisplayModules";
@@ -291,11 +263,52 @@
             // 
             this.cmbError.ContainerControl = this;
             // 
+            // cmbDuration
+            // 
+            this.cmbDuration.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbDuration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.cmbDuration.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbDuration.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbDuration.ForeColor = System.Drawing.Color.White;
+            this.cmbDuration.FormattingEnabled = true;
+            this.cmbDuration.Location = new System.Drawing.Point(219, 170);
+            this.cmbDuration.Name = "cmbDuration";
+            this.cmbDuration.Size = new System.Drawing.Size(699, 37);
+            this.cmbDuration.TabIndex = 20;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(104, 170);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(109, 29);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Duration:";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(219, 213);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(714, 1);
+            this.panel1.TabIndex = 9;
+            // 
             // ManageModules
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(991, 578);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cmbDuration);
             this.Controls.Add(this.dgvDisplayModules);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -305,12 +318,9 @@
             this.Controls.Add(this.btnAddModule);
             this.Controls.Add(this.cmbType);
             this.Controls.Add(this.TypePanel);
-            this.Controls.Add(this.durationPanel);
             this.Controls.Add(this.namePanel);
-            this.Controls.Add(this.txtDuration);
             this.Controls.Add(this.txtModuleName);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageModules";
@@ -329,12 +339,9 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtModuleName;
-        private System.Windows.Forms.TextBox txtDuration;
         private System.Windows.Forms.Panel namePanel;
-        private System.Windows.Forms.Panel durationPanel;
         private System.Windows.Forms.Panel TypePanel;
         private System.Windows.Forms.ComboBox cmbType;
         private FontAwesome.Sharp.IconButton btnAddModule;
@@ -347,5 +354,8 @@
         private System.Windows.Forms.ErrorProvider ModuleNameError;
         private System.Windows.Forms.ErrorProvider durationError;
         private System.Windows.Forms.ErrorProvider cmbError;
+        private System.Windows.Forms.ComboBox cmbDuration;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel1;
     }
 }

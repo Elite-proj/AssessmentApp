@@ -35,14 +35,13 @@
             this.checkMissed = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblDisplayAssessmentType = new System.Windows.Forms.Label();
             this.lblDisplayDueDate = new System.Windows.Forms.Label();
-            this.lblDisplayStatus = new System.Windows.Forms.Label();
             this.btnSave = new FontAwesome.Sharp.IconButton();
             this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.dtpDate = new System.Windows.Forms.DateTimePicker();
             this.errorCheck = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDisplayAssessment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorCheck)).BeginInit();
             this.SuspendLayout();
@@ -58,8 +57,10 @@
             // 
             // dgvDisplayAssessment
             // 
-            this.dgvDisplayAssessment.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvDisplayAssessment.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDisplayAssessment.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDisplayAssessment.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisplayAssessment.Location = new System.Drawing.Point(12, 198);
             this.dgvDisplayAssessment.Name = "dgvDisplayAssessment";
@@ -117,17 +118,6 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "Due Date:";
             // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(488, 320);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 32);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Status:";
-            // 
             // lblDisplayAssessmentType
             // 
             this.lblDisplayAssessmentType.Anchor = System.Windows.Forms.AnchorStyles.Right;
@@ -150,20 +140,9 @@
             this.lblDisplayDueDate.TabIndex = 13;
             this.lblDisplayDueDate.Text = "display here";
             // 
-            // lblDisplayStatus
-            // 
-            this.lblDisplayStatus.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblDisplayStatus.AutoSize = true;
-            this.lblDisplayStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisplayStatus.Location = new System.Drawing.Point(593, 320);
-            this.lblDisplayStatus.Name = "lblDisplayStatus";
-            this.lblDisplayStatus.Size = new System.Drawing.Size(169, 32);
-            this.lblDisplayStatus.TabIndex = 14;
-            this.lblDisplayStatus.Text = "display here";
-            // 
             // btnSave
             // 
-            this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -213,16 +192,26 @@
             // 
             this.errorCheck.ContainerControl = this;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Gold;
+            this.label3.Location = new System.Drawing.Point(12, 140);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(616, 29);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "Select assessment below and mark complete or missed.";
+            // 
             // SearchStudentModule
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(918, 616);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dtpDate);
-            this.Controls.Add(this.lblDisplayStatus);
             this.Controls.Add(this.lblDisplayDueDate);
             this.Controls.Add(this.lblDisplayAssessmentType);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSave);
@@ -253,11 +242,10 @@
         private FontAwesome.Sharp.IconButton btnSave;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblDisplayAssessmentType;
         private System.Windows.Forms.Label lblDisplayDueDate;
-        private System.Windows.Forms.Label lblDisplayStatus;
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.ErrorProvider errorCheck;
+        private System.Windows.Forms.Label label3;
     }
 }

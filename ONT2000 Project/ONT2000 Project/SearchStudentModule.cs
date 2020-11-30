@@ -29,6 +29,8 @@ namespace ONT2000_Project
         {
             btnSave.Visible = false;
             dtpDate.Visible = false;
+            lblDisplayAssessmentType.Text = "";
+            lblDisplayDueDate.Text = "";
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -55,11 +57,11 @@ namespace ONT2000_Project
         {
             StudentAssessment student = new StudentAssessment();
 
-            if (checkMissed.Checked != true || checkComplete.Checked != true)
+            if (checkMissed.Checked != true && checkComplete.Checked != true)
             {
                 errorCheck.SetError(btnSave, "Check a box");
             }
-            else
+            else if(checkComplete.Checked==true || checkMissed.Checked==true)
             {
                 student.userID = userID;
                 student.assessmentID = int.Parse(dgvDisplayAssessment.SelectedRows[0].Cells["AssessmentID"].Value.ToString());
@@ -88,6 +90,11 @@ namespace ONT2000_Project
                 {
                     MessageBox.Show("Failed to save assessment");
                 }
+
+                checkMissed.CheckState = CheckState.Unchecked;
+                checkComplete.CheckState = CheckState.Unchecked;
+                lblDisplayAssessmentType.Text = "";
+                lblDisplayDueDate.Text = "";
             }
         }
 

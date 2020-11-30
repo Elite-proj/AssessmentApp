@@ -23,6 +23,7 @@ namespace ONT2000_Project
 
         private void SearchUser_Load(object sender, EventArgs e)
         {
+            lblUserID.Text = "";
             btnUpdateUser.Enabled = false;
             btnDeleteUser.Enabled = false;
 
@@ -120,7 +121,7 @@ namespace ONT2000_Project
                 user.title = cmbTitle.SelectedItem.ToString();
                 user.email = txtEmail.Text;
                 user.UserID = int.Parse(dgvDisplayUser.SelectedRows[0].Cells["UserID"].Value.ToString());
-                user.userStatus = "Active";
+                user.userStatus = cmbStatus.SelectedItem.ToString();
 
                 int x = bll.UpdateUser(user);
 
@@ -139,7 +140,7 @@ namespace ONT2000_Project
 
                     DataTable dt = new DataTable();
 
-                    dt = bll.ListAllLecturers(user);
+                    dt = bll.ListAllStudents(user);
 
                     dgvDisplayUser.DataSource = dt;
                 }
@@ -154,6 +155,14 @@ namespace ONT2000_Project
 
 
                     dgvDisplayUser.DataSource = dt;
+
+                    txtName.Text = "";
+                    txtSurname.Text = "";
+                    txtEmail.Text = "";
+                    cmbStatus.Text = "";
+                    cmbTitle.Text = "";
+                    cmbRole.Text = "";
+                    lblUserID.Text = "";
 
                 }
 
@@ -187,6 +196,15 @@ namespace ONT2000_Project
                 dt = bll.ListAllLecturers(user);
 
                 dgvDisplayUser.DataSource = dt;
+
+
+                txtName.Text = "";
+                txtSurname.Text = "";
+                txtEmail.Text = "";
+                cmbStatus.Text = "";
+                cmbTitle.Text = "";
+                cmbRole.Text = "";
+                lblUserID.Text = "";
             }
             else if (rdbNameSearch.Checked == true)
             {
@@ -199,7 +217,15 @@ namespace ONT2000_Project
 
 
                 dgvDisplayUser.DataSource = dt;
-               
+
+                txtName.Text = "";
+                txtSurname.Text = "";
+                txtEmail.Text = "";
+                cmbStatus.Text = "";
+                cmbTitle.Text = "";
+                cmbRole.Text = "";
+                lblUserID.Text = "";
+
             }
             btnUpdateUser.Enabled = false;
             btnDeleteUser.Enabled = false;
@@ -211,7 +237,7 @@ namespace ONT2000_Project
 
             DataTable dt = new DataTable();
 
-            dt = bll.ListAllLecturers(user);
+            dt = bll.ListAllStudents(user);
 
             dgvDisplayUser.DataSource = dt;
         }

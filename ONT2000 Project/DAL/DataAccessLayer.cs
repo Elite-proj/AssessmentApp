@@ -1182,5 +1182,32 @@ namespace DAL
             return x;
         }
 
+        public DataTable SelectAssessmentsBetweenDates(User user,string min,string max)
+        {
+            try
+            {
+                dbConn.Open();
+            }
+            catch
+            {
+            }
+
+            dbComm = new SqlCommand("sp_SelectAssessmentBetweenDates", dbConn);
+            dbComm.CommandType = CommandType.StoredProcedure;
+
+            dbComm.Parameters.AddWithValue("@UserID", user.UserID);
+            dbComm.Parameters.AddWithValue("@MinDate", min);
+            dbComm.Parameters.AddWithValue("@MaxDate", max);
+
+
+            dbAdapter = new SqlDataAdapter(dbComm);
+            dt = new DataTable();
+            dbAdapter.Fill(dt);
+
+            dbConn.Close();
+            return dt;
+
+        }
+
     }
 }

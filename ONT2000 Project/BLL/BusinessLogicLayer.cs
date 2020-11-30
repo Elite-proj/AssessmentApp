@@ -253,5 +253,10 @@ namespace BLL
         {
             return dal.DeleteAssessmentType(id);
         }
+
+        public DataTable SelectAssessmentsBetweenDates(User user, string min, string max)
+        {
+            return dal.SelectAssessmentsBetweenDates(user, min, max);
+        }
     }
 }

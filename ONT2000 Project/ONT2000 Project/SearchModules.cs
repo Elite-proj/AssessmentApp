@@ -49,6 +49,11 @@ namespace ONT2000_Project
                 btnDeleteModule.Enabled = false;
 
                 btnUpdate.Enabled = false;
+
+                txtModuleName.Clear();
+                cmbDuration.Items.Clear();
+                cmbModuleType.Text = "";
+                lblCode.Text = "";
             }
         }
 
@@ -63,9 +68,9 @@ namespace ONT2000_Project
             {
                 txtModuleError.SetError(txtModuleName, "Please do not leave this field empty");
             }
-            else if (string.IsNullOrEmpty(txtDuration.Text))
+            else if (cmbDuration.SelectedItem==null)
             {
-                txtDurationError.SetError(txtDuration, "Please do not leave this field empty");
+                txtDurationError.SetError(cmbDuration, "Please select duration");
             }
             else if (cmbModuleType.SelectedItem == null)
             {
@@ -75,7 +80,7 @@ namespace ONT2000_Project
             {
 
                 mod.name = txtModuleName.Text;
-                mod.Duration = txtDuration.Text;
+                mod.Duration = cmbDuration.SelectedItem.ToString();
                 mod.moduleTypeID = int.Parse(cmbModuleType.SelectedValue.ToString());
                 mod.moduleID = int.Parse(dgvDisplay.SelectedRows[0].Cells["ModuleID"].Value.ToString());
                 int x = bll.UpdateModule(mod);
@@ -98,6 +103,11 @@ namespace ONT2000_Project
 
                 btnUpdate.Enabled = false;
                 btnDeleteModule.Enabled = false;
+
+                txtModuleName.Clear();
+                cmbDuration.Items.Clear();
+                cmbModuleType.Text = "";
+                lblCode.Text = "";
             }
         }
 
@@ -105,6 +115,7 @@ namespace ONT2000_Project
         {
             btnDeleteModule.Enabled = false;
             btnUpdate.Enabled = false;
+            lblCode.Text = "";
         }
 
         private void btnDeleteModule_Click(object sender, EventArgs e)
@@ -132,6 +143,11 @@ namespace ONT2000_Project
 
 
             dgvDisplay.DataSource = dt;
+
+            txtModuleName.Clear();
+            cmbDuration.Items.Clear();
+            cmbModuleType.Text = "";
+            lblCode.Text = "";
         }
 
         private void dgvDisplay_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -155,13 +171,37 @@ namespace ONT2000_Project
 
             lblCode.Text = dt.Rows[0]["ModuleID"].ToString();
             txtModuleName.Text = dt.Rows[0]["ModuleName"].ToString();
-            txtDuration.Text = dt.Rows[0]["ModuleDuration"].ToString();
+            cmbDuration.Text = dt.Rows[0]["ModuleDuration"].ToString();
             cmbModuleType.DataSource = bll.InsertToComboBoxModuleType();
             cmbModuleType.ValueMember = "ModuleTypeID";
             cmbModuleType.DisplayMember = "ModuleTypeDescription";
 
             btnUpdate.Enabled = true;
             btnDeleteModule.Enabled = true;
+        }
+
+        private void cmbModuleType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbDuration.Items.Clear();
+
+            if (cmbModuleType.SelectedIndex == 0)
+            {
+                cmbDuration.Items.Add("7 Months");
+                cmbDuration.Items.Add("8 Months");
+                cmbDuration.Items.Add("9 Months");
+                cmbDuration.Items.Add("10 Months");
+                cmbDuration.Items.Add("11 Months");
+                cmbDuration.Items.Add("12 Months");
+            }
+            else if (cmbModuleType.SelectedIndex == 1)
+            {
+                cmbDuration.Items.Add("1 Month");
+                cmbDuration.Items.Add("2 Months");
+                cmbDuration.Items.Add("3 Months");
+                cmbDuration.Items.Add("4 Months");
+                cmbDuration.Items.Add("5 Months");
+                cmbDuration.Items.Add("6 Months");
+            }
         }
     }
 }

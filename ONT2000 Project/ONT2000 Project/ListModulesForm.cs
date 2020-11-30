@@ -38,6 +38,7 @@ namespace ONT2000_Project
             if (userType == "Lecturer")
             {
                 dgvDisplayModules.DataSource = bll.GetLecturerModuleByUserID(user);
+                label1.Visible = false;
             }
             else if (userType == "Student")
             {
@@ -48,6 +49,7 @@ namespace ONT2000_Project
                 }
                 dgvDisplayModules.DataSource = bll.GetStudentModule(user);
                 dgvDisplayModules.ForeColor = Color.Black;
+                label1.Visible = true;
             }
         }
 
@@ -72,6 +74,11 @@ namespace ONT2000_Project
                 sm.BringToFront();
                 sm.Show();
             }
+        }
+
+        private void childFormPanel_Paint(object sender, PaintEventArgs e)
+        {
+            label1.Visible = false;
         }
     }
 }

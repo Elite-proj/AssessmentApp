@@ -79,6 +79,12 @@ namespace ONT2000_Project
                 {
                     MessageBox.Show("Failed to add user");
                 }
+
+                txtName.Clear();
+                txtSurname.Clear();
+                txtEmail.Clear();
+                cmbRole.Text ="";
+                cmbTitle.Text ="";
             }
         }
     }

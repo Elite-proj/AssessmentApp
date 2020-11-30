@@ -31,6 +31,8 @@ namespace ONT2000_Project
             btnAddModule.Enabled = true;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
+
+            
         }
 
         private void btnAddModule_Click(object sender, EventArgs e)
@@ -40,9 +42,9 @@ namespace ONT2000_Project
             {
                 ModuleNameError.SetError(txtModuleName, "Please do not leave this field empty");
             }
-            else if (string.IsNullOrEmpty(txtDuration.Text))
+            else if (cmbDuration.SelectedItem==null)
             {
-                durationError.SetError(txtDuration, "Please do leave this field empty");
+                durationError.SetError(cmbDuration, "Please select duration");
             }
             else if (cmbType.SelectedItem == null)
             {
@@ -52,7 +54,7 @@ namespace ONT2000_Project
             {
 
                 mod.name = txtModuleName.Text;
-                mod.Duration = txtDuration.Text;
+                mod.Duration = cmbDuration.SelectedItem.ToString();
                 mod.moduleTypeID = int.Parse(cmbType.SelectedValue.ToString());
 
                 int x = bll.InsertModule(mod);
@@ -65,6 +67,9 @@ namespace ONT2000_Project
                 {
                     MessageBox.Show("Failed to add module");
                 }
+                txtModuleName.Clear();
+                cmbDuration.Text = "";
+               
             }
         }
 
@@ -74,9 +79,9 @@ namespace ONT2000_Project
             {
                 ModuleNameError.SetError(txtModuleName, "Please do not leave this field empty");
             }
-            else if (string.IsNullOrEmpty(txtDuration.Text))
+            else if (cmbDuration.SelectedItem==null)
             {
-                durationError.SetError(txtDuration, "Please do leave this field empty");
+                durationError.SetError(cmbDuration, "Please select duration");
             }
             else if (cmbType.SelectedItem == null)
             {
@@ -85,7 +90,7 @@ namespace ONT2000_Project
             else
             {
                 mod.name = txtModuleName.Text;
-                mod.Duration = txtDuration.Text;
+                mod.Duration = cmbDuration.SelectedItem.ToString();
                 mod.moduleTypeID = int.Parse(cmbType.SelectedValue.ToString());
                 mod.moduleID = int.Parse(dgvDisplayModules.SelectedRows[0].Cells["ModuleID"].Value.ToString());
                 int x = bll.UpdateModule(mod);
@@ -103,6 +108,8 @@ namespace ONT2000_Project
                 btnAddModule.Enabled = true;
                 btnUpdate.Enabled = false;
                 btnDelete.Enabled = false;
+                txtModuleName.Clear();
+                cmbDuration.Text = "";
             }
         }
 
@@ -129,6 +136,8 @@ namespace ONT2000_Project
             btnAddModule.Enabled = true;
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
+            txtModuleName.Clear();
+            cmbDuration.Text = "";
         }
 
         private void btnListModules_Click(object sender, EventArgs e)
@@ -141,6 +150,8 @@ namespace ONT2000_Project
             btnUpdate.Enabled = false;
             btnDelete.Enabled = false;
             btnAddModule.Enabled = true;
+            txtModuleName.Clear();
+            cmbDuration.Text = "";
         }
 
         private void dgvDisplayModules_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -167,7 +178,7 @@ namespace ONT2000_Project
                 dt = bll.GetModuleByID(mod);
 
                 txtModuleName.Text = dt.Rows[0]["ModuleName"].ToString();
-                txtDuration.Text = dt.Rows[0]["ModuleDuration"].ToString();
+                cmbDuration.Text = dt.Rows[0]["ModuleDuration"].ToString();
                 //cmbType.DataSource = dt;
 
                 //cmbType.ValueMember = dt.Rows[0]["ModuleTypeID"].ToString();
@@ -177,6 +188,30 @@ namespace ONT2000_Project
 
                 btnDelete.Enabled = true;
                 btnUpdate.Enabled = true;
+            }
+        }
+
+        private void cmbType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbDuration.Items.Clear();
+
+            if (cmbType.SelectedIndex == 0)
+            {
+                cmbDuration.Items.Add("7 Months");
+                cmbDuration.Items.Add("8 Months");
+                cmbDuration.Items.Add("9 Months");
+                cmbDuration.Items.Add("10 Months");
+                cmbDuration.Items.Add("11 Months");
+                cmbDuration.Items.Add("12 Months");
+            }
+            else if (cmbType.SelectedIndex == 1)
+            {
+                cmbDuration.Items.Add("1 Month");
+                cmbDuration.Items.Add("2 Months");
+                cmbDuration.Items.Add("3 Months");
+                cmbDuration.Items.Add("4 Months");
+                cmbDuration.Items.Add("5 Months");
+                cmbDuration.Items.Add("6 Months");
             }
         }
     }

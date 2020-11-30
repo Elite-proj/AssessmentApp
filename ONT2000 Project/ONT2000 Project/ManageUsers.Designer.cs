@@ -54,6 +54,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(192, 71);
@@ -64,6 +65,7 @@
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(192, 140);
@@ -74,6 +76,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(192, 212);
@@ -84,6 +87,7 @@
             // 
             // label4
             // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(192, 296);
@@ -94,6 +98,7 @@
             // 
             // label5
             // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(192, 368);
@@ -104,48 +109,54 @@
             // 
             // txtName
             // 
+            this.txtName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(286, 71);
+            this.txtName.Location = new System.Drawing.Point(278, 71);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(487, 39);
+            this.txtName.Size = new System.Drawing.Size(536, 39);
             this.txtName.TabIndex = 5;
             // 
             // txtSurname
             // 
+            this.txtSurname.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSurname.Location = new System.Drawing.Point(336, 140);
+            this.txtSurname.Location = new System.Drawing.Point(327, 140);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(487, 39);
             this.txtSurname.TabIndex = 6;
             // 
             // txtEmail
             // 
+            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(287, 368);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(487, 39);
+            this.txtEmail.Size = new System.Drawing.Size(527, 39);
             this.txtEmail.TabIndex = 7;
             // 
             // cmbTitle
             // 
+            this.cmbTitle.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbTitle.FormattingEnabled = true;
             this.cmbTitle.Location = new System.Drawing.Point(278, 212);
             this.cmbTitle.Name = "cmbTitle";
-            this.cmbTitle.Size = new System.Drawing.Size(545, 37);
+            this.cmbTitle.Size = new System.Drawing.Size(536, 37);
             this.cmbTitle.TabIndex = 8;
             // 
             // cmbRole
             // 
+            this.cmbRole.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cmbRole.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRole.FormattingEnabled = true;
             this.cmbRole.Location = new System.Drawing.Point(278, 296);
             this.cmbRole.Name = "cmbRole";
-            this.cmbRole.Size = new System.Drawing.Size(545, 37);
+            this.cmbRole.Size = new System.Drawing.Size(536, 37);
             this.cmbRole.TabIndex = 9;
             // 
             // btnRegisterUser
             // 
+            this.btnRegisterUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnRegisterUser.BackColor = System.Drawing.Color.White;
             this.btnRegisterUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegisterUser.Flip = FontAwesome.Sharp.FlipOrientation.Normal;

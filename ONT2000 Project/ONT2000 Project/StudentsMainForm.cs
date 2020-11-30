@@ -35,6 +35,7 @@ namespace ONT2000_Project
             ResetSearchAssessment();
             ResetSearchModule();
             ResetListAssessments();
+            ResetBetweenDates();
         }
 
         private void btnSearchModule_Click(object sender, EventArgs e)
@@ -43,6 +44,7 @@ namespace ONT2000_Project
             ResetListModules();
             ResetSearchAssessment();
             ResetListAssessments();
+            ResetBetweenDates();
         }
 
         private void btnSearchAssessments_Click(object sender, EventArgs e)
@@ -51,6 +53,7 @@ namespace ONT2000_Project
             ResetListModules();
             ResetSearchModule();
             ResetListAssessments();
+            ResetBetweenDates();
         }
 
         private void btnListAssessments_Click(object sender, EventArgs e)
@@ -59,6 +62,7 @@ namespace ONT2000_Project
             ResetListModules();
             ResetSearchAssessment();
             ResetSearchModule();
+            ResetBetweenDates();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -74,6 +78,7 @@ namespace ONT2000_Project
             ResetSearchAssessment();
             ResetSearchModule();
             ResetListAssessments();
+            ResetBetweenDates();
         }
 
         //Userinterface code
@@ -120,6 +125,26 @@ namespace ONT2000_Project
             childFormPanel.Tag = search;
             search.BringToFront();
             search.Show();
+        }
+
+        public void BetweenDatesClick()
+        {
+            btnBetweenDates.ImageAlign = ContentAlignment.MiddleRight;
+            btnBetweenDates.IconColor = Color.FromArgb(0, 0, 64);
+            btnBetweenDates.BackColor = Color.FromArgb(78, 184, 206);
+            btnBetweenDates.FlatAppearance.BorderSize = 3;
+            btnBetweenDates.FlatAppearance.BorderColor = Color.FromArgb(0, 0, 64);
+            btnBetweenDates.ForeColor = Color.FromArgb(0, 0, 64);
+            currentTabIcon.IconChar = FontAwesome.Sharp.IconChar.CalendarAlt;
+            lblCurrentTab.Text = "Select Assessments between dates";
+
+            AssessmentBetweenDates list = new AssessmentBetweenDates(getUserID);
+            list.TopLevel = false;
+            list.Dock = DockStyle.Fill;
+            childFormPanel.Controls.Add(list);
+            childFormPanel.Tag = list;
+            list.BringToFront();
+            list.Show();
         }
 
         public void SearchModulesClick()
@@ -184,6 +209,15 @@ namespace ONT2000_Project
             btnSearchAssessments.ForeColor = Color.White;
         }
 
+        public void ResetBetweenDates()
+        {
+            btnBetweenDates.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBetweenDates.IconColor = Color.White;
+            btnBetweenDates.BackColor = Color.Navy;
+            btnBetweenDates.FlatAppearance.BorderSize = 0;
+            btnBetweenDates.ForeColor = Color.White;
+        }
+
         public void ResetSearchModule()
         {
             btnSearchModule.ImageAlign = ContentAlignment.MiddleLeft;
@@ -210,6 +244,15 @@ namespace ONT2000_Project
             this.Hide();
             PasswordCreationForm pass = new PasswordCreationForm();
             pass.Show();
+        }
+
+        private void btnBetweenDates_Click(object sender, EventArgs e)
+        {
+            BetweenDatesClick();
+            ResetListModules();
+            ResetSearchModule();
+            ResetSearchAssessment();
+            ResetListAssessments();
         }
     }
 }

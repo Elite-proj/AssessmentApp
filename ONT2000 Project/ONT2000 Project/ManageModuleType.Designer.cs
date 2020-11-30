@@ -45,9 +45,10 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(187, 60);
+            this.label1.Location = new System.Drawing.Point(164, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(222, 29);
             this.label1.TabIndex = 0;
@@ -55,14 +56,19 @@
             // 
             // txtDesc
             // 
+            this.txtDesc.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDesc.Location = new System.Drawing.Point(415, 54);
+            this.txtDesc.Location = new System.Drawing.Point(392, 24);
             this.txtDesc.Name = "txtDesc";
             this.txtDesc.Size = new System.Drawing.Size(329, 39);
             this.txtDesc.TabIndex = 1;
             // 
             // dgvDisplay
             // 
+            this.dgvDisplay.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDisplay.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDisplay.Location = new System.Drawing.Point(6, 263);
             this.dgvDisplay.Name = "dgvDisplay";
