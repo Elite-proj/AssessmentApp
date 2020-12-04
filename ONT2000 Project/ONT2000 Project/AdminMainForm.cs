@@ -425,5 +425,10 @@ namespace ONT2000_Project
             ResetSearchUsers();
             ResetTotalStudents();
         }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

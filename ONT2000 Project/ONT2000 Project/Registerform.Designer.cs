@@ -102,6 +102,7 @@
             this.txtName.TabStop = false;
             this.txtName.Text = "Name";
             this.txtName.Click += new System.EventHandler(this.txtName_Click);
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // txtSurname
             // 

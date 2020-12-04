@@ -56,6 +56,7 @@ namespace ONT2000_Project
                 mod.name = txtModuleName.Text;
                 mod.Duration = cmbDuration.SelectedItem.ToString();
                 mod.moduleTypeID = int.Parse(cmbType.SelectedValue.ToString());
+                mod.Status = "Active";
 
                 int x = bll.InsertModule(mod);
 

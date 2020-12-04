@@ -41,8 +41,7 @@ namespace ONT2000_Project
             cmbRole.Items.Add("Lecturer");
             cmbRole.Items.Add("Student");
 
-            cmbStatus.Items.Add("Active");
-            cmbStatus.Items.Add("In-Active");
+           
 
             
 
@@ -121,7 +120,7 @@ namespace ONT2000_Project
                 user.title = cmbTitle.SelectedItem.ToString();
                 user.email = txtEmail.Text;
                 user.UserID = int.Parse(dgvDisplayUser.SelectedRows[0].Cells["UserID"].Value.ToString());
-                user.userStatus = cmbStatus.SelectedItem.ToString();
+                
 
                 int x = bll.UpdateUser(user);
 
@@ -159,7 +158,7 @@ namespace ONT2000_Project
                     txtName.Text = "";
                     txtSurname.Text = "";
                     txtEmail.Text = "";
-                    cmbStatus.Text = "";
+                    
                     cmbTitle.Text = "";
                     cmbRole.Text = "";
                     lblUserID.Text = "";
@@ -201,7 +200,7 @@ namespace ONT2000_Project
                 txtName.Text = "";
                 txtSurname.Text = "";
                 txtEmail.Text = "";
-                cmbStatus.Text = "";
+               
                 cmbTitle.Text = "";
                 cmbRole.Text = "";
                 lblUserID.Text = "";
@@ -221,7 +220,7 @@ namespace ONT2000_Project
                 txtName.Text = "";
                 txtSurname.Text = "";
                 txtEmail.Text = "";
-                cmbStatus.Text = "";
+               
                 cmbTitle.Text = "";
                 cmbRole.Text = "";
                 lblUserID.Text = "";
@@ -288,7 +287,7 @@ namespace ONT2000_Project
                 txtEmail.Text = dt.Rows[0]["Email"].ToString();
                 cmbRole.Text = dt.Rows[0]["Role"].ToString();
                 cmbTitle.Text = dt.Rows[0]["Title"].ToString();
-                cmbStatus.Text = dt.Rows[0]["UserStatus"].ToString();
+               
 
                 btnUpdateUser.Enabled = true;
                 btnDeleteUser.Enabled = true;

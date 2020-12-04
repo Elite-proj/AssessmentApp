@@ -32,7 +32,7 @@ namespace ONT2000_Project
             lblDisplayAssessmentType.Text = "";
             lblDisplayDueDate.Text = "";
 
-            dgvDisplayAssessment.ForeColor = Color.Black;
+            
         }
 
         private void btnSearch_Click(object sender, EventArgs e)

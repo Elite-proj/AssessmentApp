@@ -106,9 +106,10 @@ namespace DAL
             dbComm = new SqlCommand("sp_InsertModule", dbConn);
             dbComm.CommandType = CommandType.StoredProcedure;
 
-            dbComm.Parameters.AddWithValue("Name", mod.name);
-            dbComm.Parameters.AddWithValue("Duration", mod.Duration);
-            dbComm.Parameters.AddWithValue("ModuleTypeID", mod.moduleTypeID);
+            dbComm.Parameters.AddWithValue("@Name", mod.name);
+            dbComm.Parameters.AddWithValue("@Duration", mod.Duration);
+            dbComm.Parameters.AddWithValue("@ModuleTypeID", mod.moduleTypeID);
+            dbComm.Parameters.AddWithValue("@ModuleStatus", mod.Status);
 
             int x = dbComm.ExecuteNonQuery();
 
@@ -600,7 +601,7 @@ namespace DAL
             dbComm.Parameters.AddWithValue("@Title", user.title);
             dbComm.Parameters.AddWithValue("@Role", user.Role);
             dbComm.Parameters.AddWithValue("@Email", user.email);
-            dbComm.Parameters.AddWithValue("@Status", user.userStatus);
+           
             dbComm.Parameters.AddWithValue("@UserID", user.UserID);
 
             int x = dbComm.ExecuteNonQuery();

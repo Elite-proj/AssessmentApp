@@ -44,12 +44,14 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.childFormPanel = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.currentTabIcon)).BeginInit();
             this.childFormPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -219,6 +221,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Navy;
+            this.panel3.Controls.Add(this.iconPictureBox1);
             this.panel3.Controls.Add(this.lblProfile);
             this.panel3.Controls.Add(this.lblCurrentTab);
             this.panel3.Controls.Add(this.currentTabIcon);
@@ -292,6 +295,19 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconPictureBox1.BackColor = System.Drawing.Color.Navy;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.iconPictureBox1.IconColor = System.Drawing.Color.White;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.Location = new System.Drawing.Point(638, 19);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox1.TabIndex = 4;
+            this.iconPictureBox1.TabStop = false;
+            // 
             // StudentsMainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -313,6 +329,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.currentTabIcon)).EndInit();
             this.childFormPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -335,5 +352,6 @@
         private System.Windows.Forms.Label lblProfile;
         private FontAwesome.Sharp.IconButton btnLogOut;
         private FontAwesome.Sharp.IconButton btnBetweenDates;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
     }
 }

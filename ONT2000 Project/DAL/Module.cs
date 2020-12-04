@@ -11,5 +11,6 @@ namespace DAL
         public int moduleID { get; set; }
         public string name { get; set; }
         public string Duration { get; set; }
+        public string Status { get; set; }
     }
 }

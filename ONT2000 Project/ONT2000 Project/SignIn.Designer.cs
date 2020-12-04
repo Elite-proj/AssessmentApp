@@ -62,6 +62,7 @@
             this.txtEmail.TabStop = false;
             this.txtEmail.Text = "Email Address";
             this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // emailPanel
             // 

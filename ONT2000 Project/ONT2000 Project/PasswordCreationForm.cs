@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using DAL;
 using BLL;
 
@@ -105,53 +106,66 @@ namespace ONT2000_Project
             BusinessLogicLayer bll = new BusinessLogicLayer();
             User user = new User();
 
-            user.email = txtEmail.Text;
+            string pattern = "^([\\w\\.\\-]+)@([\\w\\-]+)((\\.(\\w){2,3})+)$";
 
-            DataTable dt = new DataTable();
-
-            dt = bll.GetUserByEmail(user);
-
-
-            if (dt.Rows.Count > 0)
+            if (Regex.IsMatch(txtEmail.Text, pattern)==false)
             {
-
-                string role = dt.Rows[0]["Role"].ToString();
-                string email = dt.Rows[0]["Email"].ToString();
-
-                if (dt.Rows[0]["Role"].ToString() == "Administrator" && dt.Rows[0]["Password"].ToString() != "")
-                {
-                    MessageBox.Show("Check Successfull");
-                    SignIn sign = new SignIn(email, role);
-                    sign.Show();
-                    this.Hide();
-                }
-                else if (dt.Rows[0]["Password"].ToString() == "")
-                {
-                    txtPassword.Visible = true;
-                    passwordIcon.Visible = true;
-                    passwordPanel.Visible = true;
-
-                    txtEmail.Enabled = false;
-                    emailPanel.Enabled = false;
-                    userIcon.Enabled = false;
-
-                    btnCheckEmail.Visible = false;
-                    btnContinue.Visible = true;
-
-                    id= int.Parse(dt.Rows[0]["UserID"].ToString());
-                }
-                else if (dt.Rows[0]["Password"].ToString() != "")
-                {
-                    MessageBox.Show("Check Successfull");
-                    SignIn sign = new SignIn(email,role);
-                    sign.Show();
-                    this.Hide();
-                }
+                emailError.SetError(txtEmail, "Invalid email");
+            }
+            else if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                emailError.SetError(txtEmail, "Do not leave this field empty");
             }
             else
             {
-                MessageBox.Show("User not found. Contact the system Administrator");
-                
+                user.email = txtEmail.Text;
+
+                DataTable dt = new DataTable();
+
+                dt = bll.GetUserByEmail(user);
+
+
+                if (dt.Rows.Count > 0)
+                {
+
+                    string role = dt.Rows[0]["Role"].ToString();
+                    string email = dt.Rows[0]["Email"].ToString();
+
+                    if (dt.Rows[0]["Role"].ToString() == "Administrator" && dt.Rows[0]["Password"].ToString() != "")
+                    {
+                        MessageBox.Show("Check Successfull");
+                        SignIn sign = new SignIn(email, role);
+                        sign.Show();
+                        this.Hide();
+                    }
+                    else if (dt.Rows[0]["Password"].ToString() == "")
+                    {
+                        txtPassword.Visible = true;
+                        passwordIcon.Visible = true;
+                        passwordPanel.Visible = true;
+
+                        txtEmail.Enabled = false;
+                        emailPanel.Enabled = false;
+                        userIcon.Enabled = false;
+
+                        btnCheckEmail.Visible = false;
+                        btnContinue.Visible = true;
+
+                        id = int.Parse(dt.Rows[0]["UserID"].ToString());
+                    }
+                    else if (dt.Rows[0]["Password"].ToString() != "")
+                    {
+                        MessageBox.Show("Check Successfull");
+                        SignIn sign = new SignIn(email, role);
+                        sign.Show();
+                        this.Hide();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("User not found. Contact the system Administrator");
+
+                }
             }
         }
 
@@ -160,24 +174,37 @@ namespace ONT2000_Project
             BusinessLogicLayer bll = new BusinessLogicLayer();
             User user = new User();
 
-            user.UserID = id;
-            user.password = txtPassword.Text;
-
-            int x = bll.UserSetPassword(user);
-
-            if (x > 0)
+            if (string.IsNullOrEmpty(txtPassword.Text))
             {
-                MessageBox.Show("Password successful. Now re-verify your email");
-                txtPassword.Visible = false;
-                passwordIcon.Visible = false;
-                passwordPanel.Visible = false;
-                btnContinue.Visible = false;
-                btnCheckEmail.Visible = true;
+                passwordError.SetError(txtPassword, "Do not leave this field empty");
             }
             else
             {
-                MessageBox.Show("Failed to create password");
+
+                user.UserID = id;
+                user.password = txtPassword.Text;
+
+                int x = bll.UserSetPassword(user);
+
+                if (x > 0)
+                {
+                    MessageBox.Show("Password successful. Now re-verify your email");
+                    txtPassword.Visible = false;
+                    passwordIcon.Visible = false;
+                    passwordPanel.Visible = false;
+                    btnContinue.Visible = false;
+                    btnCheckEmail.Visible = true;
+                }
+                else
+                {
+                    MessageBox.Show("Failed to create password");
+                }
             }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

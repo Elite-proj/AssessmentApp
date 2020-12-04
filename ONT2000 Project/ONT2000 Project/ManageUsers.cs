@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 using BLL;
 using DAL;
 
@@ -39,7 +40,13 @@ namespace ONT2000_Project
             BusinessLogicLayer bll = new BusinessLogicLayer();
             User user = new User();
 
-            if (string.IsNullOrEmpty(txtName.Text))
+            string pattern = "^([\\w\\.\\-]+)@([\\w\\-]+)((\\.(\\w){2,3})+)$";
+
+            if (Regex.IsMatch(txtEmail.Text, pattern) == false)
+            {
+                emailError.SetError(txtEmail, "Invalid email");
+            }
+            else if (string.IsNullOrEmpty(txtName.Text))
             {
                 txtNameError.SetError(txtName, "Please do not leave this field empty");
             }
@@ -86,6 +93,11 @@ namespace ONT2000_Project
                 cmbRole.Text ="";
                 cmbTitle.Text ="";
             }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

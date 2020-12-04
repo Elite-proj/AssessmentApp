@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,7 +42,6 @@
             this.dgvDisplayStudent = new System.Windows.Forms.DataGridView();
             this.btnListStudents = new FontAwesome.Sharp.IconButton();
             this.btnDeleteStudent = new FontAwesome.Sharp.IconButton();
-            this.btnUpdateStudent = new FontAwesome.Sharp.IconButton();
             this.btnAddStudent = new FontAwesome.Sharp.IconButton();
             this.moduleError = new System.Windows.Forms.ErrorProvider(this.components);
             this.studentError = new System.Windows.Forms.ErrorProvider(this.components);
@@ -93,6 +94,7 @@
             this.cmbModule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.cmbModule.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbModule.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbModule.ForeColor = System.Drawing.Color.White;
             this.cmbModule.FormattingEnabled = true;
             this.cmbModule.Location = new System.Drawing.Point(274, 36);
             this.cmbModule.Name = "cmbModule";
@@ -149,7 +151,24 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDisplayStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDisplayStudent.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDisplayStudent.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDisplayStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Navy;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDisplayStudent.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDisplayStudent.Location = new System.Drawing.Point(1, 342);
             this.dgvDisplayStudent.Name = "dgvDisplayStudent";
             this.dgvDisplayStudent.RowHeadersWidth = 62;
@@ -191,7 +210,7 @@
             this.btnDeleteStudent.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnDeleteStudent.IconSize = 35;
             this.btnDeleteStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteStudent.Location = new System.Drawing.Point(537, 257);
+            this.btnDeleteStudent.Location = new System.Drawing.Point(435, 257);
             this.btnDeleteStudent.Name = "btnDeleteStudent";
             this.btnDeleteStudent.Rotation = 0D;
             this.btnDeleteStudent.Size = new System.Drawing.Size(152, 55);
@@ -200,27 +219,6 @@
             this.btnDeleteStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDeleteStudent.UseVisualStyleBackColor = false;
             this.btnDeleteStudent.Click += new System.EventHandler(this.btnDeleteStudent_Click);
-            // 
-            // btnUpdateStudent
-            // 
-            this.btnUpdateStudent.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnUpdateStudent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdateStudent.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnUpdateStudent.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateStudent.IconChar = FontAwesome.Sharp.IconChar.SyncAlt;
-            this.btnUpdateStudent.IconColor = System.Drawing.Color.White;
-            this.btnUpdateStudent.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnUpdateStudent.IconSize = 35;
-            this.btnUpdateStudent.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUpdateStudent.Location = new System.Drawing.Point(323, 257);
-            this.btnUpdateStudent.Name = "btnUpdateStudent";
-            this.btnUpdateStudent.Rotation = 0D;
-            this.btnUpdateStudent.Size = new System.Drawing.Size(177, 55);
-            this.btnUpdateStudent.TabIndex = 11;
-            this.btnUpdateStudent.Text = "UPDATE";
-            this.btnUpdateStudent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnUpdateStudent.UseVisualStyleBackColor = true;
-            this.btnUpdateStudent.Click += new System.EventHandler(this.btnUpdateStudent_Click);
             // 
             // btnAddStudent
             // 
@@ -267,7 +265,6 @@
             this.Controls.Add(this.dgvDisplayStudent);
             this.Controls.Add(this.btnListStudents);
             this.Controls.Add(this.btnDeleteStudent);
-            this.Controls.Add(this.btnUpdateStudent);
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -302,7 +299,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnAddStudent;
-        private FontAwesome.Sharp.IconButton btnUpdateStudent;
         private FontAwesome.Sharp.IconButton btnDeleteStudent;
         private FontAwesome.Sharp.IconButton btnListStudents;
         private System.Windows.Forms.DataGridView dgvDisplayStudent;

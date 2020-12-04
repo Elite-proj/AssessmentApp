@@ -40,7 +40,7 @@ namespace ONT2000_Project
             lblModule.Text = des;
 
             dgvDisplayAssessment.DataSource = dt;
-            dgvDisplayAssessment.ForeColor = Color.Black;
+            
         }
 
         private void dgvDisplayAssessment_CellClick(object sender, DataGridViewCellEventArgs e)

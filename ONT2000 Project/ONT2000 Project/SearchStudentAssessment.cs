@@ -38,7 +38,7 @@ namespace ONT2000_Project
             student.status = cmbFilter.SelectedItem.ToString();
 
             dgvDisplayAssessment.DataSource = bll.GetStudentAssessmentByStatus(student);
-            dgvDisplayAssessment.ForeColor = Color.Black;
+           
         }
     }
 }

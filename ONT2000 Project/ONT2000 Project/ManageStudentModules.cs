@@ -56,7 +56,7 @@ namespace ONT2000_Project
 
         private void btnUpdateStudent_Click(object sender, EventArgs e)
         {
-            btnUpdateStudent.Enabled = false;
+           
             btnDeleteStudent.Enabled = false;
             cmbModule.Enabled = true;
             cmbStudent.Enabled = true;
@@ -98,7 +98,7 @@ namespace ONT2000_Project
                 dgvDisplayStudent.DataSource = dt;
 
                 btnDeleteStudent.Enabled = false;
-                btnUpdateStudent.Enabled = false;
+               
                 btnAddStudent.Enabled = true;
 
             }
@@ -131,7 +131,7 @@ namespace ONT2000_Project
             cmbStudent.Enabled = true;
             dtpDate.Enabled = true;
 
-            btnUpdateStudent.Enabled = false;
+            
             btnDeleteStudent.Enabled = false;
             btnAddStudent.Enabled = true;
         }
@@ -144,7 +144,7 @@ namespace ONT2000_Project
 
             btnAddStudent.Enabled = true;
 
-            btnUpdateStudent.Enabled = false;
+            
             btnDeleteStudent.Enabled = false;
 
             DataTable dt = new DataTable();
@@ -162,7 +162,7 @@ namespace ONT2000_Project
 
             btnAddStudent.Enabled = true;
 
-            btnUpdateStudent.Enabled = false;
+           
             btnDeleteStudent.Enabled = false;
 
             User user = new User();
@@ -199,7 +199,7 @@ namespace ONT2000_Project
 
                 btnAddStudent.Enabled = false;
 
-                btnUpdateStudent.Enabled = true;
+               
                 btnDeleteStudent.Enabled = true;
             }
         }

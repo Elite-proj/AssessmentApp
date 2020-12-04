@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.emailPanel = new System.Windows.Forms.Panel();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.userIcon = new FontAwesome.Sharp.IconPictureBox();
@@ -37,8 +38,12 @@
             this.btnContinue = new System.Windows.Forms.Button();
             this.btnCheckEmail = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.emailError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.passwordError = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.userIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordIcon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailError)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordError)).BeginInit();
             this.SuspendLayout();
             // 
             // emailPanel
@@ -62,6 +67,7 @@
             this.txtEmail.TabStop = false;
             this.txtEmail.Text = "Email Address";
             this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // userIcon
             // 
@@ -153,6 +159,14 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Provide your Email for identification";
             // 
+            // emailError
+            // 
+            this.emailError.ContainerControl = this;
+            // 
+            // passwordError
+            // 
+            this.passwordError.ContainerControl = this;
+            // 
             // PasswordCreationForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -168,10 +182,13 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.userIcon);
             this.Name = "PasswordCreationForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PasswordCreationForm";
             this.Load += new System.EventHandler(this.PasswordCreationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.userIcon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.passwordIcon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emailError)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.passwordError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,5 +204,7 @@
         private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.Button btnCheckEmail;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider emailError;
+        private System.Windows.Forms.ErrorProvider passwordError;
     }
 }
